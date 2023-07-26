@@ -1,2172 +1,1999 @@
 <!DOCTYPE html>
 <html lang="en">
-   <head>
-      <meta charset="utf-8">
-      <meta http-equiv="X-UA-Compatible" content="IE=edge">
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-      <meta name="robots" content="index, follow">
-      <meta name="viewport" content="minimal-ui, width=device-width, initial-scale=1.0">
-      <meta name="apple-mobile-web-app-capable" content="yes">
-      <meta name="apple-mobile-web-app-capable" content="yes">
-      <meta property="og:title" content="Agario - Agar.io private server by Sigmally">
-      <meta property="og:image" content="images/agario-private-server.png">
-      <meta property="og:image:secure_url" content="images/agario-private-server.png">
-      <title>
-         Agario - Agar.io private server by Sigmally
-      </title>
-      <link rel="alternate" href="https://sigmally.com/" hreflang="en">
-      <link rel="alternate" href="https://sigmally.com/es/" hreflang="es">
-      <link rel="alternate" href="https://sigmally.com/tr/" hreflang="tr">
-      <link rel="alternate" href="https://sigmally.com/fr/" hreflang="fr">
-      <meta name="twitter:card" content="summary_large_image">
-      <meta name="twitter:title" content="Agario - Agar.io private server by Sigmally">
-      <meta name="twitter:image:src" content="https://sigmally.com/assets/images/agario-private-server.png">
-      <style>
-         @font-face {
-         font-family: Roboto;
-         font-style: normal;
-         font-weight: 400;
-         src: url(fonts/KFOmCnqEu92Fr1Mu72xKOzY.woff2) format("woff2");
-         unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF,
-         U+A640-A69F, U+FE2E-FE2F;
-         font-display: swap;
-         }
-         @font-face {
-         font-family: Roboto;
-         font-style: normal;
-         font-weight: 400;
-         src: url(fonts/KFOmCnqEu92Fr1Mu5mxKOzY.woff2) format("woff2");
-         unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
-         }
-         @font-face {
-         font-family: Roboto;
-         font-style: normal;
-         font-weight: 400;
-         src: url(fonts/KFOmCnqEu92Fr1Mu7mxKOzY.woff2) format("woff2");
-         unicode-range: U+1F00-1FFF;
-         font-display: swap;
-         }
-         @font-face {
-         font-family: Roboto;
-         font-style: normal;
-         font-weight: 400;
-         src: url(fonts/KFOmCnqEu92Fr1Mu4WxKOzY.woff2) format("woff2");
-         unicode-range: U+0370-03FF;
-         font-display: swap;
-         }
-         @font-face {
-         font-family: Roboto;
-         font-style: normal;
-         font-weight: 400;
-         src: url(fonts/KFOmCnqEu92Fr1Mu7WxKOzY.woff2) format("woff2");
-         unicode-range: U+0102-0103, U+0110-0111, U+0128-0129,
-         U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
-         font-display: swap;
-         }
-         @font-face {
-         font-family: Roboto;
-         font-style: normal;
-         font-weight: 400;
-         src: url(fonts/KFOmCnqEu92Fr1Mu7GxKOzY.woff2) format("woff2");
-         unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020,
-         U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
-         font-display: swap;
-         }
-         @font-face {
-         font-family: Roboto;
-         font-style: normal;
-         font-weight: 400;
-         src: url(fonts/KFOmCnqEu92Fr1Mu4mxK.woff2) format("woff2");
-         unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC,
-         U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122,
-         U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-         font-display: swap;
-         }
-      </style>
-      <meta name="description" content="Agario is unblocked private server where players can play through their browser. Agar.io is a funny game, this mode called pvp.">
-      <script async src="js/gtm.js"></script><script>
-         (function (w, d, s, l, i) {
-           w[l] = w[l] || [];
-           w[l].push({
-             "gtm.start": new Date().getTime(),
-             event: "gtm.js",
-           });
-           var f = d.getElementsByTagName(s)[0],
-             j = d.createElement(s),
-             dl = l != "dataLayer" ? "&l=" + l : "";
-           j.async = true;
-           j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
-           f.parentNode.insertBefore(j, f);
-         })(window, document, "script", "dataLayer", "GTM-WV7SCVB");
-      </script>
-      <link id="favicon" rel="icon" type="image/png" href="icon.ico">
-      <style>
-         @font-face {
-         font-family: Ubuntu;
-         font-style: normal;
-         font-weight: 300;
-         src: url(fonts/4iCv6KVjbNBYlgoC1CzjvWyNL4U.woff2) format("woff2");
-         unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF,
-         U+A640-A69F, U+FE2E-FE2F;
-         font-display: swap;
-         }
-         @font-face {
-         font-family: Ubuntu;
-         font-style: normal;
-         font-weight: 300;
-         src: url(fonts/4iCv6KVjbNBYlgoC1CzjtGyNL4U.woff2) format("woff2");
-         unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
-         font-display: swap;
-         }
-         @font-face {
-         font-family: Ubuntu;
-         font-style: normal;
-         font-weight: 300;
-         src: url(fonts/4iCv6KVjbNBYlgoC1CzjvGyNL4U.woff2) format("woff2");
-         unicode-range: U+1F00-1FFF;
-         font-display: swap;
-         }
-         @font-face {
-         font-family: Ubuntu;
-         font-style: normal;
-         font-weight: 300;
-         src: url(fonts/4iCv6KVjbNBYlgoC1Czjs2yNL4U.woff2) format("woff2");
-         unicode-range: U+0370-03FF;
-         font-display: swap;
-         }
-         @font-face {
-         font-family: Ubuntu;
-         font-style: normal;
-         font-weight: 300;
-         src: url(fonts/4iCv6KVjbNBYlgoC1CzjvmyNL4U.woff2) format("woff2");
-         unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020,
-         U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
-         font-display: swap;
-         }
-         @font-face {
-         font-family: Ubuntu;
-         font-style: normal;
-         font-weight: 300;
-         src: url(fonts/4iCv6KVjbNBYlgoC1CzjsGyN.woff2) format("woff2");
-         unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC,
-         U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122,
-         U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-         font-display: swap;
-         }
-         @font-face {
-         font-family: Ubuntu;
-         font-style: normal;
-         font-weight: 400;
-         src: url(fonts/4iCs6KVjbNBYlgoKcg72j00.woff2) format("woff2");
-         unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF,
-         U+A640-A69F, U+FE2E-FE2F;
-         font-display: swap;
-         }
-         @font-face {
-         font-family: Ubuntu;
-         font-style: normal;
-         font-weight: 400;
-         src: url(fonts/4iCs6KVjbNBYlgoKew72j00.woff2) format("woff2");
-         unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
-         font-display: swap;
-         }
-         @font-face {
-         font-family: Ubuntu;
-         font-style: normal;
-         font-weight: 400;
-         src: url(fonts/4iCs6KVjbNBYlgoKcw72j00.woff2) format("woff2");
-         unicode-range: U+1F00-1FFF;
-         }
-         @font-face {
-         font-family: Ubuntu;
-         font-style: normal;
-         font-weight: 400;
-         src: url(fonts/4iCs6KVjbNBYlgoKfA72j00.woff2) format("woff2");
-         unicode-range: U+0370-03FF;
-         font-display: swap;
-         }
-         @font-face {
-         font-family: Ubuntu;
-         font-style: normal;
-         font-weight: 400;
-         src: url(fonts/4iCs6KVjbNBYlgoKcQ72j00.woff2) format("woff2");
-         unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020,
-         U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
-         font-display: swap;
-         }
-         @font-face {
-         font-family: Ubuntu;
-         font-style: normal;
-         font-weight: 400;
-         src: url(fonts/4iCs6KVjbNBYlgoKfw72.woff2) format("woff2");
-         unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC,
-         U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122,
-         U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-         font-display: swap;
-         }
-         @font-face {
-         font-family: Ubuntu;
-         font-style: normal;
-         font-weight: 500;
-         src: url(fonts/4iCv6KVjbNBYlgoCjC3jvWyNL4U.woff2) format("woff2");
-         unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF,
-         U+A640-A69F, U+FE2E-FE2F;
-         font-display: swap;
-         }
-         @font-face {
-         font-family: Ubuntu;
-         font-style: normal;
-         font-weight: 500;
-         src: url(fonts/4iCv6KVjbNBYlgoCjC3jtGyNL4U.woff2) format("woff2");
-         unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
-         }
-         @font-face {
-         font-family: Ubuntu;
-         font-style: normal;
-         font-weight: 500;
-         src: url(fonts/4iCv6KVjbNBYlgoCjC3jvGyNL4U.woff2) format("woff2");
-         unicode-range: U+1F00-1FFF;
-         font-display: swap;
-         }
-         @font-face {
-         font-family: Ubuntu;
-         font-style: normal;
-         font-weight: 500;
-         src: url(fonts/4iCv6KVjbNBYlgoCjC3js2yNL4U.woff2) format("woff2");
-         unicode-range: U+0370-03FF;
-         font-display: swap;
-         }
-         @font-face {
-         font-family: Ubuntu;
-         font-style: normal;
-         font-weight: 500;
-         src: url(fonts/4iCv6KVjbNBYlgoCjC3jvmyNL4U.woff2) format("woff2");
-         unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020,
-         U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
-         font-display: swap;
-         }
-         @font-face {
-         font-family: Ubuntu;
-         font-style: normal;
-         font-weight: 500;
-         src: url(fonts/4iCv6KVjbNBYlgoCjC3jsGyN.woff2) format("woff2");
-         unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC,
-         U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122,
-         U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-         font-display: swap;
-         }
-         @font-face {
-         font-family: Ubuntu;
-         font-style: normal;
-         font-weight: 700;
-         src: url(fonts/4iCv6KVjbNBYlgoCxCvjvWyNL4U.woff2) format("woff2");
-         unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF,
-         U+A640-A69F, U+FE2E-FE2F;
-         }
-         @font-face {
-         font-family: Ubuntu;
-         font-style: normal;
-         font-weight: 700;
-         src: url(fonts/4iCv6KVjbNBYlgoCxCvjtGyNL4U.woff2) format("woff2");
-         unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
-         font-display: swap;
-         }
-         @font-face {
-         font-family: Ubuntu;
-         font-style: normal;
-         font-weight: 700;
-         src: url(fonts/4iCv6KVjbNBYlgoCxCvjvGyNL4U.woff2) format("woff2");
-         unicode-range: U+1F00-1FFF;
-         font-display: swap;
-         }
-         @font-face {
-         font-family: Ubuntu;
-         font-style: normal;
-         font-weight: 700;
-         src: url(fonts/4iCv6KVjbNBYlgoCxCvjs2yNL4U.woff2) format("woff2");
-         unicode-range: U+0370-03FF;
-         font-display: swap;
-         }
-         @font-face {
-         font-family: Ubuntu;
-         font-style: normal;
-         font-weight: 700;
-         src: url(fonts/4iCv6KVjbNBYlgoCxCvjvmyNL4U.woff2) format("woff2");
-         unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020,
-         U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
-         font-display: swap;
-         }
-         @font-face {
-         font-family: Ubuntu;
-         font-style: normal;
-         font-weight: 700;
-         src: url(fonts/4iCv6KVjbNBYlgoCxCvjsGyN.woff2) format("woff2");
-         unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC,
-         U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122,
-         U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-         font-display: swap;
-         }
-      </style>
-      <style>
-         html {
-         font-family: sans-serif;
-         -webkit-text-size-adjust: 100%;
-         -ms-text-size-adjust: 100%;
-         }
-         body {
-         margin: 0;
-         }
-         article,
-         aside,
-         details,
-         figcaption,
-         figure,
-         footer,
-         header,
-         hgroup,
-         main,
-         menu,
-         nav,
-         section,
-         summary {
-         display: block;
-         }
-         audio,
-         canvas,
-         progress,
-         video {
-         display: inline-block;
-         vertical-align: baseline;
-         }
-         a {
-         background-color: transparent;
-         }
-         b,
-         strong {
-         font-weight: 700;
-         }
-         h1 {
-         margin: 0.67em 0;
-         font-size: 2em;
-         }
-         img {
-         border: 0;
-         }
-         svg:not(:root) {
-         overflow: hidden;
-         }
-         hr {
-         height: 0;
-         -webkit-box-sizing: content-box;
-         -moz-box-sizing: content-box;
-         box-sizing: content-box;
-         }
-         button,
-         input,
-         optgroup,
-         select,
-         textarea {
-         margin: 0;
-         font: inherit;
-         color: inherit;
-         }
-         button {
-         overflow: visible;
-         }
-         button,
-         select {
-         text-transform: none;
-         }
-         button,
-         html input[type="button"],
-         input[type="reset"],
-         input[type="submit"] {
-         -webkit-appearance: button;
-         cursor: pointer;
-         }
-         input {
-         line-height: normal;
-         }
-         input[type="checkbox"],
-         input[type="radio"] {
-         -webkit-box-sizing: border-box;
-         -moz-box-sizing: border-box;
-         box-sizing: border-box;
-         padding: 0;
-         }
-         * {
-         -webkit-box-sizing: border-box;
-         -moz-box-sizing: border-box;
-         box-sizing: border-box;
-         }
-         :after,
-         :before {
-         -webkit-box-sizing: border-box;
-         -moz-box-sizing: border-box;
-         box-sizing: border-box;
-         }
-         html {
-         font-size: 10px;
-         -webkit-tap-highlight-color: transparent;
-         }
-         body {
-         font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-         font-size: 14px;
-         line-height: 1.42857143;
-         color: #333;
-         background-color: #fff;
-         }
-         button,
-         input,
-         select,
-         textarea {
-         font-family: inherit;
-         font-size: inherit;
-         line-height: inherit;
-         }
-         a {
-         color: #337ab7;
-         text-decoration: none;
-         }
-         img {
-         vertical-align: middle;
-         }
-         hr {
-         margin-top: 20px;
-         margin-bottom: 20px;
-         border: 0;
-         border-top: 1px solid #eee;
-         }
-         .h1,
-         .h2,
-         .h3,
-         .h4,
-         .h5,
-         .h6,
-         h1,
-         h2,
-         h3,
-         h4,
-         h5,
-         h6 {
-         font-family: inherit;
-         font-weight: 500;
-         line-height: 1.1;
-         color: inherit;
-         }
-         .h1,
-         .h2,
-         .h3,
-         h1,
-         h2,
-         h3 {
-         margin-top: 20px;
-         margin-bottom: 10px;
-         }
-         .h4,
-         .h5,
-         .h6,
-         h4,
-         h5,
-         h6 {
-         margin-top: 10px;
-         margin-bottom: 10px;
-         }
-         .h1,
-         h1 {
-         font-size: 36px;
-         }
-         .h3,
-         h3 {
-         font-size: 24px;
-         }
-         .h4,
-         h4 {
-         font-size: 18px;
-         }
-         .h5,
-         h5 {
-         font-size: 14px;
-         }
-         p {
-         margin: 0 0 10px;
-         }
-         ol,
-         ul {
-         margin-top: 0;
-         margin-bottom: 10px;
-         }
-         .container {
-         padding-right: 15px;
-         padding-left: 15px;
-         margin-right: auto;
-         margin-left: auto;
-         }
-         @media (min-width: 768px) {
-         .container {
-         width: 750px;
-         }
-         }
-         @media (min-width: 992px) {
-         .container {
-         width: 970px;
-         }
-         }
-         @media (min-width: 1200px) {
-         .container {
-         width: 1170px;
-         }
-         }
-         label {
-         display: inline-block;
-         max-width: 100%;
-         margin-bottom: 5px;
-         font-weight: 700;
-         }
-         input[type="checkbox"],
-         input[type="radio"] {
-         margin: 4px 0 0;
-         line-height: normal;
-         }
-         .form-control {
-         display: block;
-         width: 100%;
-         height: 34px;
-         padding: 6px 12px;
-         font-size: 14px;
-         line-height: 1.42857143;
-         color: #555;
-         background-color: #fff;
-         background-image: none;
-         border: 1px solid #ccc;
-         border-radius: 4px;
-         -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
-         box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
-         -webkit-transition: border-color ease-in-out 0.15s,
-         -webkit-box-shadow ease-in-out 0.15s;
-         -o-transition: border-color ease-in-out 0.15s,
-         box-shadow ease-in-out 0.15s;
-         transition: border-color ease-in-out 0.15s,
-         box-shadow ease-in-out 0.15s;
-         }
-         .form-control::-webkit-input-placeholder {
-         color: #999;
-         }
-         .form-group {
-         margin-bottom: 15px;
-         }
-         .btn {
-         display: inline-block;
-         padding: 6px 12px;
-         margin-bottom: 0;
-         font-size: 14px;
-         font-weight: 400;
-         line-height: 1.42857143;
-         text-align: center;
-         white-space: nowrap;
-         vertical-align: middle;
-         -ms-touch-action: manipulation;
-         touch-action: manipulation;
-         cursor: pointer;
-         -webkit-user-select: none;
-         -moz-user-select: none;
-         -ms-user-select: none;
-         user-select: none;
-         background-image: none;
-         border: 1px solid transparent;
-         border-radius: 4px;
-         }
-         .btn.focus,
-         .btn:focus,
-         .btn:hover {
-         color: #333;
-         text-decoration: none;
-         }
-         .btn-success {
-         color: #fff;
-         background-color: #5cb85c;
-         border-color: #4cae4c;
-         }
-         .btn-success.active,
-         .btn-success.focus,
-         .btn-success:active,
-         .btn-success:focus,
-         .btn-success:hover,
-         .open>.dropdown-toggle.btn-success {
-         color: #fff;
-         background-color: #449d44;
-         border-color: #398439;
-         }
-         .alert {
-         padding: 15px;
-         margin-bottom: 20px;
-         border: 1px solid transparent;
-         border-radius: 4px;
-         }
-         .alert h4 {
-         margin-top: 0;
-         color: inherit;
-         }
-         .alert>p,
-         .alert>ul {
-         margin-bottom: 0;
-         }
-         .alert-danger {
-         color: #a94442;
-         background-color: #f2dede;
-         border-color: #ebccd1;
-         }
-         .btn-group-vertical>.btn-group:after,
-         .btn-group-vertical>.btn-group:before,
-         .btn-toolbar:after,
-         .btn-toolbar:before,
-         .clearfix:after,
-         .clearfix:before,
-         .container-fluid:after,
-         .container-fluid:before,
-         .container:after,
-         .container:before,
-         .dl-horizontal dd:after,
-         .dl-horizontal dd:before,
-         .form-horizontal .form-group:after,
-         .form-horizontal .form-group:before,
-         .modal-footer:after,
-         .modal-footer:before,
-         .nav:after,
-         .nav:before,
-         .navbar-collapse:after,
-         .navbar-collapse:before,
-         .navbar-header:after,
-         .navbar-header:before,
-         .navbar:after,
-         .navbar:before,
-         .pager:after,
-         .pager:before,
-         .panel-body:after,
-         .panel-body:before,
-         .row:after,
-         .row:before {
-         display: table;
-         content: " ";
-         }
-         .btn-group-vertical>.btn-group:after,
-         .btn-toolbar:after,
-         .clearfix:after,
-         .container-fluid:after,
-         .container:after,
-         .dl-horizontal dd:after,
-         .form-horizontal .form-group:after,
-         .modal-footer:after,
-         .nav:after,
-         .navbar-collapse:after,
-         .navbar-header:after,
-         .navbar:after,
-         .pager:after,
-         .panel-body:after,
-         .row:after {
-         clear: both;
-         }
-         .hide {
-         display: none !important;
-         }
-      </style>
-      <style>
-         .pretty * {
-         box-sizing: border-box;
-         }
-         .pretty {
-         position: relative;
-         display: inline-block;
-         margin-right: 1em;
-         white-space: nowrap;
-         line-height: 1;
-         }
-         .pretty input {
-         position: absolute;
-         left: 0;
-         top: 0;
-         min-width: 1em;
-         width: 100%;
-         height: 100%;
-         z-index: 2;
-         opacity: 0;
-         margin: 0;
-         padding: 0;
-         cursor: pointer;
-         }
-         .pretty .state label {
-         position: initial;
-         display: inline-block;
-         font-weight: 400;
-         margin: 0;
-         text-indent: 1.5em;
-         min-width: calc(1em + 2px);
-         }
-         .pretty .state label:after,
-         .pretty .state label:before {
-         content: "";
-         width: calc(1em + 2px);
-         height: calc(1em + 2px);
-         display: block;
-         box-sizing: border-box;
-         border-radius: 0;
-         border: 1px solid transparent;
-         z-index: 0;
-         position: absolute;
-         left: 0;
-         top: calc((0% - (100% - 1em)) - 8%);
-         background-color: transparent;
-         }
-         .pretty .state label:before {
-         border-color: #bdc3c7;
-         }
-         .pretty.p-svg .state .svg {
-         position: absolute;
-         font-size: 1em;
-         width: calc(1em + 2px);
-         height: calc(1em + 2px);
-         left: 0;
-         z-index: 1;
-         text-align: center;
-         line-height: normal;
-         top: calc((0% - (100% - 1em)) - 8%);
-         border: 1px solid transparent;
-         opacity: 0;
-         }
-         .pretty.p-svg .state svg {
-         margin: 0;
-         width: 100%;
-         height: 100%;
-         text-align: center;
-         display: -webkit-box;
-         display: -ms-flexbox;
-         display: flex;
-         -webkit-box-flex: 1;
-         -ms-flex: 1;
-         flex: 1;
-         -webkit-box-pack: center;
-         -ms-flex-pack: center;
-         justify-content: center;
-         -webkit-box-align: center;
-         -ms-flex-align: center;
-         align-items: center;
-         line-height: 1;
-         }
-         .pretty.p-svg input:checked~.state .svg {
-         opacity: 1;
-         }
-         .pretty.p-round .state label:after,
-         .pretty.p-round .state label:before {
-         border-radius: 100%;
-         }
-         .pretty.p-smooth .icon,
-         .pretty.p-smooth .svg,
-         .pretty.p-smooth label:after,
-         .pretty.p-smooth label:before {
-         transition: all 0.5s ease;
-         }
-         .pretty.p-smooth input:checked+.state label:after {
-         transition: all 0.3s ease;
-         }
-         .pretty.p-smooth input:checked+.state .icon,
-         .pretty.p-smooth input:checked+.state .svg,
-         .pretty.p-smooth input:checked+.state img {
-         -webkit-animation: zoom 0.2s ease;
-         animation: zoom 0.2s ease;
-         }
-         .pretty input:checked~.state.p-success label:after,
-         .pretty.p-toggle .state.p-success label:after {
-         background-color: #5cb85c !important;
-         }
-         .pretty input:checked~.state.p-success .icon,
-         .pretty input:checked~.state.p-success .svg,
-         .pretty.p-toggle .state.p-success .icon,
-         .pretty.p-toggle .state.p-success .svg {
-         color: #fff;
-         stroke: #fff;
-         }
-      </style>
-      <link href="/css/style.css" rel="stylesheet">
-      <link href="/css/menu.css" rel="stylesheet">
-      <style>
-         #menu {
-         padding: 30px 30px 35px;
-         }
-         .right-menu {
-         padding: 5px;
-         width: 100%;
-         display: flex;
-         justify-content: center;
-         overflow: hidden;
-         }
-         .container.center {
-         justify-content: center;
-         }
-         .line {
-         align-items: flex-start;
-         margin: 0;
-         }
-         .right-menu {
-         padding: 5px;
-         }
-         .right-menu>div>div {
-         display: flex;
-         justify-content: center;
-         }
-         .menu-wrapper.top {
-         flex-direction: column;
-         align-items: stretch;
-         }
-         div#left-menu {
-         margin-bottom: 10px;
-         }
-         /*ad-b*/
-         .ad_bottom {
-         background-color: white;
-         z-index: 200;
-         padding: 5px;
-         margin: 5px 0;
-         border-radius: 15px;
-         }
-         @media (max-width: 640px),
-         (max-height: 650px) {
-         .ad_bottom {
-         display: none;
-         }
-         }
-         /*f-cnt*/
-         .menu-links {
-         margin-bottom: 0;
-         }
-         @media (min-width: 641px) {
-         /*t-usr*/
-         .top-users {
-         height: 203px;
-         background-color: unset;
-         border-radius: unset;
-         }
-         .top-users__inner {
-         position: relative;
-         height: 203px;
-         background-color: white;
-         border-radius: 15px;
-         overflow: auto;
-         transition: 0.3s;
-         }
-         /*f-cnt*/
-         .line.bottom {
-         margin: 5px auto 0;
-         }
-         }
-         /*t-usr st*/
-         .top-users__inner::-webkit-scrollbar {
-         width: 16px;
-         }
-         .top-users__inner::-webkit-scrollbar-button {
-         height: 7px;
-         }
-         .top-users__inner::-webkit-scrollbar-thumb {
-         background-color: transparent;
-         border: 4px solid white;
-         border-radius: 15px;
-         }
-         .top-users__inner:hover::-webkit-scrollbar-thumb {
-         background-color: #999;
-         }
-         .top-users__inner::-webkit-scrollbar-thumb:hover {
-         background-color: #888;
-         }
-         .top-users__inner::-webkit-scrollbar-track,
-         .top-users__inner::-webkit-scrollbar-track-piece,
-         .top-users__inner::-webkit-scrollbar-corner,
-         .top-users__inner::-webkit-resizer {
-         background-color: transparent;
-         }
-         /*t-usr ed*/
-      </style>
-      <script async src="https://www.googletagmanager.com/gtag/js?id=G-LTEDJX3D32"></script>
-      <script>
-         window.dataLayer = window.dataLayer || [];
-         function gtag() {
-           dataLayer.push(arguments);
-         }
-         gtag("js", new Date());
-         
-         gtag("config", "G-LTEDJX3D32");
-         gtag("config", "UA-42444803-3");
-      </script>
-   </head>
-   <body>
-      <noscript>
-         <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WV7SCVB" height="0" width="0" style="display: none; visibility: hidden"></iframe>
-      </noscript>
-      <div class="body__inner">
-         <div id="gallery" onclick="if (event.target == this) this.hide()" style="display: none">
-            <div id="gallery-content">
-               <div id="gallery-header">
-                  Skins
-               </div>
-               <div class="input-search">
-                  <div class="skin-search">
-                     <input placeholder="Search skin..." id="skin-search">
-                     <button type="submit" class="skin-search__submit">
-                        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                           <path d="M17.8301 17.0207L13.1828 12.4477C14.3997 11.1255 15.1475 9.37682 15.1475 7.45261C15.1469 3.33639 11.7565 0 7.57388 0C3.39127 0 0.000854492 3.33639 0.000854492 7.45261C0.000854492 11.5688 3.39127 14.9052 7.57388 14.9052C9.38105 14.9052 11.0386 14.2802 12.3405 13.241L17.0058 17.832C17.2332 18.056 17.6022 18.056 17.8295 17.832C18.0574 17.6081 18.0574 17.2447 17.8301 17.0207ZM7.57388 13.7586C4.03494 13.7586 1.16607 10.9353 1.16607 7.45261C1.16607 3.96991 4.03494 1.14663 7.57388 1.14663C11.1128 1.14663 13.9817 3.96991 13.9817 7.45261C13.9817 10.9353 11.1128 13.7586 7.57388 13.7586Z" fill="#6B72C4"/>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="index, follow" />
+    <meta name="viewport" content="minimal-ui, width=device-width, initial-scale=1.0" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta property="og:title" content="Agario - Agar.io private server by Sigmally" />
+    <meta property="og:image" content="images/agario-private-server.png" />
+    <meta property="og:image:secure_url" content="images/agario-private-server.png" />
+    <title>Blaze Client - Sigmally</title>
+    <link rel="alternate" href="https://sigmally.com/" hreflang="en" />
+    <link rel="alternate" href="https://sigmally.com/es/" hreflang="es" />
+    <link rel="alternate" href="https://sigmally.com/tr/" hreflang="tr" />
+    <link rel="alternate" href="https://sigmally.com/fr/" hreflang="fr" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Agario - Agar.io private server by Sigmally" />
+    <meta name="twitter:image:src" content="https://sigmally.com/assets/images/agario-private-server.png" />
+    <style>
+      @font-face {
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: 400;
+        src: url(fonts/KFOmCnqEu92Fr1Mu72xKOzY.woff2) format("woff2");
+        unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+        font-display: swap;
+      }
+      @font-face {
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: 400;
+        src: url(fonts/KFOmCnqEu92Fr1Mu5mxKOzY.woff2) format("woff2");
+        unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+      }
+      @font-face {
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: 400;
+        src: url(fonts/KFOmCnqEu92Fr1Mu7mxKOzY.woff2) format("woff2");
+        unicode-range: U+1F00-1FFF;
+        font-display: swap;
+      }
+      @font-face {
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: 400;
+        src: url(fonts/KFOmCnqEu92Fr1Mu4WxKOzY.woff2) format("woff2");
+        unicode-range: U+0370-03FF;
+        font-display: swap;
+      }
+      @font-face {
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: 400;
+        src: url(fonts/KFOmCnqEu92Fr1Mu7WxKOzY.woff2) format("woff2");
+        unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+        font-display: swap;
+      }
+      @font-face {
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: 400;
+        src: url(fonts/KFOmCnqEu92Fr1Mu7GxKOzY.woff2) format("woff2");
+        unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F,
+          U+A720-A7FF;
+        font-display: swap;
+      }
+      @font-face {
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: 400;
+        src: url(fonts/KFOmCnqEu92Fr1Mu4mxK.woff2) format("woff2");
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074,
+          U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+        font-display: swap;
+      }
+    </style>
+    <meta
+      name="description"
+      content="Agario is unblocked private server where players can play through their browser. Agar.io is a funny game, this mode called pvp." />
+    <script async src="js/gtm.js"></script>
+    <script>
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({
+          "gtm.start": new Date().getTime(),
+          event: "gtm.js",
+        });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != "dataLayer" ? "&l=" + l : "";
+        j.async = true;
+        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, "script", "dataLayer", "GTM-WV7SCVB");
+    </script>
+    <link id="favicon" rel="icon" type="image/png" href="icon.ico" />
+    <style>
+      @font-face {
+        font-family: Ubuntu;
+        font-style: normal;
+        font-weight: 300;
+        src: url(fonts/4iCv6KVjbNBYlgoC1CzjvWyNL4U.woff2) format("woff2");
+        unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+        font-display: swap;
+      }
+      @font-face {
+        font-family: Ubuntu;
+        font-style: normal;
+        font-weight: 300;
+        src: url(fonts/4iCv6KVjbNBYlgoC1CzjtGyNL4U.woff2) format("woff2");
+        unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+        font-display: swap;
+      }
+      @font-face {
+        font-family: Ubuntu;
+        font-style: normal;
+        font-weight: 300;
+        src: url(fonts/4iCv6KVjbNBYlgoC1CzjvGyNL4U.woff2) format("woff2");
+        unicode-range: U+1F00-1FFF;
+        font-display: swap;
+      }
+      @font-face {
+        font-family: Ubuntu;
+        font-style: normal;
+        font-weight: 300;
+        src: url(fonts/4iCv6KVjbNBYlgoC1Czjs2yNL4U.woff2) format("woff2");
+        unicode-range: U+0370-03FF;
+        font-display: swap;
+      }
+      @font-face {
+        font-family: Ubuntu;
+        font-style: normal;
+        font-weight: 300;
+        src: url(fonts/4iCv6KVjbNBYlgoC1CzjvmyNL4U.woff2) format("woff2");
+        unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F,
+          U+A720-A7FF;
+        font-display: swap;
+      }
+      @font-face {
+        font-family: Ubuntu;
+        font-style: normal;
+        font-weight: 300;
+        src: url(fonts/4iCv6KVjbNBYlgoC1CzjsGyN.woff2) format("woff2");
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074,
+          U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+        font-display: swap;
+      }
+      @font-face {
+        font-family: Ubuntu;
+        font-style: normal;
+        font-weight: 400;
+        src: url(fonts/4iCs6KVjbNBYlgoKcg72j00.woff2) format("woff2");
+        unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+        font-display: swap;
+      }
+      @font-face {
+        font-family: Ubuntu;
+        font-style: normal;
+        font-weight: 400;
+        src: url(fonts/4iCs6KVjbNBYlgoKew72j00.woff2) format("woff2");
+        unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+        font-display: swap;
+      }
+      @font-face {
+        font-family: Ubuntu;
+        font-style: normal;
+        font-weight: 400;
+        src: url(fonts/4iCs6KVjbNBYlgoKcw72j00.woff2) format("woff2");
+        unicode-range: U+1F00-1FFF;
+      }
+      @font-face {
+        font-family: Ubuntu;
+        font-style: normal;
+        font-weight: 400;
+        src: url(fonts/4iCs6KVjbNBYlgoKfA72j00.woff2) format("woff2");
+        unicode-range: U+0370-03FF;
+        font-display: swap;
+      }
+      @font-face {
+        font-family: Ubuntu;
+        font-style: normal;
+        font-weight: 400;
+        src: url(fonts/4iCs6KVjbNBYlgoKcQ72j00.woff2) format("woff2");
+        unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F,
+          U+A720-A7FF;
+        font-display: swap;
+      }
+      @font-face {
+        font-family: Ubuntu;
+        font-style: normal;
+        font-weight: 400;
+        src: url(fonts/4iCs6KVjbNBYlgoKfw72.woff2) format("woff2");
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074,
+          U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+        font-display: swap;
+      }
+      @font-face {
+        font-family: Ubuntu;
+        font-style: normal;
+        font-weight: 500;
+        src: url(fonts/4iCv6KVjbNBYlgoCjC3jvWyNL4U.woff2) format("woff2");
+        unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+        font-display: swap;
+      }
+      @font-face {
+        font-family: Ubuntu;
+        font-style: normal;
+        font-weight: 500;
+        src: url(fonts/4iCv6KVjbNBYlgoCjC3jtGyNL4U.woff2) format("woff2");
+        unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+      }
+      @font-face {
+        font-family: Ubuntu;
+        font-style: normal;
+        font-weight: 500;
+        src: url(fonts/4iCv6KVjbNBYlgoCjC3jvGyNL4U.woff2) format("woff2");
+        unicode-range: U+1F00-1FFF;
+        font-display: swap;
+      }
+      @font-face {
+        font-family: Ubuntu;
+        font-style: normal;
+        font-weight: 500;
+        src: url(fonts/4iCv6KVjbNBYlgoCjC3js2yNL4U.woff2) format("woff2");
+        unicode-range: U+0370-03FF;
+        font-display: swap;
+      }
+      @font-face {
+        font-family: Ubuntu;
+        font-style: normal;
+        font-weight: 500;
+        src: url(fonts/4iCv6KVjbNBYlgoCjC3jvmyNL4U.woff2) format("woff2");
+        unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F,
+          U+A720-A7FF;
+        font-display: swap;
+      }
+      @font-face {
+        font-family: Ubuntu;
+        font-style: normal;
+        font-weight: 500;
+        src: url(fonts/4iCv6KVjbNBYlgoCjC3jsGyN.woff2) format("woff2");
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074,
+          U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+        font-display: swap;
+      }
+      @font-face {
+        font-family: Ubuntu;
+        font-style: normal;
+        font-weight: 700;
+        src: url(fonts/4iCv6KVjbNBYlgoCxCvjvWyNL4U.woff2) format("woff2");
+        unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+      }
+      @font-face {
+        font-family: Ubuntu;
+        font-style: normal;
+        font-weight: 700;
+        src: url(fonts/4iCv6KVjbNBYlgoCxCvjtGyNL4U.woff2) format("woff2");
+        unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+        font-display: swap;
+      }
+      @font-face {
+        font-family: Ubuntu;
+        font-style: normal;
+        font-weight: 700;
+        src: url(fonts/4iCv6KVjbNBYlgoCxCvjvGyNL4U.woff2) format("woff2");
+        unicode-range: U+1F00-1FFF;
+        font-display: swap;
+      }
+      @font-face {
+        font-family: Ubuntu;
+        font-style: normal;
+        font-weight: 700;
+        src: url(fonts/4iCv6KVjbNBYlgoCxCvjs2yNL4U.woff2) format("woff2");
+        unicode-range: U+0370-03FF;
+        font-display: swap;
+      }
+      @font-face {
+        font-family: Ubuntu;
+        font-style: normal;
+        font-weight: 700;
+        src: url(fonts/4iCv6KVjbNBYlgoCxCvjvmyNL4U.woff2) format("woff2");
+        unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F,
+          U+A720-A7FF;
+        font-display: swap;
+      }
+      @font-face {
+        font-family: Ubuntu;
+        font-style: normal;
+        font-weight: 700;
+        src: url(fonts/4iCv6KVjbNBYlgoCxCvjsGyN.woff2) format("woff2");
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074,
+          U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+        font-display: swap;
+      }
+    </style>
+    <style>
+      html {
+        font-family: sans-serif;
+        -webkit-text-size-adjust: 100%;
+        -ms-text-size-adjust: 100%;
+      }
+      body {
+        margin: 0;
+      }
+      article,
+      aside,
+      details,
+      figcaption,
+      figure,
+      footer,
+      header,
+      hgroup,
+      main,
+      menu,
+      nav,
+      section,
+      summary {
+        display: block;
+      }
+      audio,
+      canvas,
+      progress,
+      video {
+        display: inline-block;
+        vertical-align: baseline;
+      }
+      a {
+        background-color: transparent;
+      }
+      b,
+      strong {
+        font-weight: 700;
+      }
+      h1 {
+        margin: 0.67em 0;
+        font-size: 2em;
+      }
+      img {
+        border: 0;
+      }
+      svg:not(:root) {
+        overflow: hidden;
+      }
+      hr {
+        height: 0;
+        -webkit-box-sizing: content-box;
+        -moz-box-sizing: content-box;
+        box-sizing: content-box;
+      }
+      button,
+      input,
+      optgroup,
+      select,
+      textarea {
+        margin: 0;
+        font: inherit;
+        color: inherit;
+      }
+      button {
+        overflow: visible;
+      }
+      button,
+      select {
+        text-transform: none;
+      }
+      button,
+      html input[type="button"],
+      input[type="reset"],
+      input[type="submit"] {
+        cursor: pointer;
+      }
+      input {
+        line-height: normal;
+      }
+      input[type="checkbox"],
+      input[type="radio"] {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        padding: 0;
+      }
+      * {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+      }
+      :after,
+      :before {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+      }
+      html {
+        font-size: 10px;
+        -webkit-tap-highlight-color: transparent;
+      }
+      body {
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-size: 14px;
+        line-height: 1.42857143;
+        color: #333;
+        background-color: #fff;
+      }
+      button,
+      input,
+      select,
+      textarea {
+        font-family: inherit;
+        font-size: inherit;
+        line-height: inherit;
+      }
+      a {
+        color: #337ab7;
+        text-decoration: none;
+      }
+      img {
+        vertical-align: middle;
+      }
+      hr {
+        margin-top: 20px;
+        margin-bottom: 20px;
+        border: 0;
+        border-top: 1px solid #eee;
+      }
+      .h1,
+      .h2,
+      .h3,
+      .h4,
+      .h5,
+      .h6,
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        font-family: inherit;
+        font-weight: 500;
+        line-height: 1.1;
+        color: inherit;
+      }
+      .h1,
+      .h2,
+      .h3,
+      h1,
+      h2,
+      h3 {
+        margin-top: 20px;
+        margin-bottom: 10px;
+      }
+      .h4,
+      .h5,
+      .h6,
+      h4,
+      h5,
+      h6 {
+        margin-top: 10px;
+        margin-bottom: 10px;
+      }
+      .h1,
+      h1 {
+        font-size: 36px;
+      }
+      .h3,
+      h3 {
+        font-size: 24px;
+      }
+      .h4,
+      h4 {
+        font-size: 18px;
+      }
+      .h5,
+      h5 {
+        font-size: 14px;
+      }
+      p {
+        margin: 0 0 10px;
+      }
+      ol,
+      ul {
+        margin-top: 0;
+        margin-bottom: 10px;
+      }
+      .container {
+        padding-right: 15px;
+        padding-left: 15px;
+        margin-right: auto;
+        margin-left: auto;
+      }
+      @media (min-width: 768px) {
+        .container {
+          width: 750px;
+        }
+      }
+      @media (min-width: 992px) {
+        .container {
+          width: 970px;
+        }
+      }
+      @media (min-width: 1200px) {
+        .container {
+          width: 1170px;
+        }
+      }
+      label {
+        display: inline-block;
+        max-width: 100%;
+        margin-bottom: 5px;
+        font-weight: 700;
+      }
+      input[type="checkbox"],
+      input[type="radio"] {
+        margin: 4px 0 0;
+        line-height: normal;
+      }
+      .form-control {
+        display: block;
+        width: 100%;
+        height: 34px;
+        padding: 6px 12px;
+        font-size: 14px;
+        line-height: 1.42857143;
+        color: #555;
+        background-color: #fff;
+        background-image: none;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+        box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+        -webkit-transition: border-color ease-in-out 0.15s, -webkit-box-shadow ease-in-out 0.15s;
+        -o-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+        transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+      }
+      .form-control::-webkit-input-placeholder {
+        color: #999;
+      }
+      .form-group {
+        margin-bottom: 15px;
+      }
+      .btn {
+        display: inline-block;
+        padding: 6px 12px;
+        margin-bottom: 0;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 1.42857143;
+        text-align: center;
+        white-space: nowrap;
+        vertical-align: middle;
+        -ms-touch-action: manipulation;
+        touch-action: manipulation;
+        cursor: pointer;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        background-image: none;
+        border: 1px solid transparent;
+        border-radius: 4px;
+      }
+      .btn.focus,
+      .btn:focus,
+      .btn:hover {
+        color: #333;
+        text-decoration: none;
+      }
+      .btn-success {
+        color: #fff;
+        background-color: #5cb85c;
+        border-color: #4cae4c;
+      }
+      .btn-success.active,
+      .btn-success.focus,
+      .btn-success:active,
+      .btn-success:focus,
+      .btn-success:hover,
+      .open > .dropdown-toggle.btn-success {
+        color: #fff;
+        background-color: #449d44;
+        border-color: #398439;
+      }
+      .alert {
+        padding: 15px;
+        margin-bottom: 20px;
+        border: 1px solid transparent;
+        border-radius: 4px;
+      }
+      .alert h4 {
+        margin-top: 0;
+        color: inherit;
+      }
+      .alert > p,
+      .alert > ul {
+        margin-bottom: 0;
+      }
+      .alert-danger {
+        color: #a94442;
+        background-color: #f2dede;
+        border-color: #ebccd1;
+      }
+      .btn-group-vertical > .btn-group:after,
+      .btn-group-vertical > .btn-group:before,
+      .btn-toolbar:after,
+      .btn-toolbar:before,
+      .clearfix:after,
+      .clearfix:before,
+      .container-fluid:after,
+      .container-fluid:before,
+      .container:after,
+      .container:before,
+      .dl-horizontal dd:after,
+      .dl-horizontal dd:before,
+      .form-horizontal .form-group:after,
+      .form-horizontal .form-group:before,
+      .modal-footer:after,
+      .modal-footer:before,
+      .nav:after,
+      .nav:before,
+      .navbar-collapse:after,
+      .navbar-collapse:before,
+      .navbar-header:after,
+      .navbar-header:before,
+      .navbar:after,
+      .navbar:before,
+      .pager:after,
+      .pager:before,
+      .panel-body:after,
+      .panel-body:before,
+      .row:after,
+      .row:before {
+        display: table;
+        content: " ";
+      }
+      .btn-group-vertical > .btn-group:after,
+      .btn-toolbar:after,
+      .clearfix:after,
+      .container-fluid:after,
+      .container:after,
+      .dl-horizontal dd:after,
+      .form-horizontal .form-group:after,
+      .modal-footer:after,
+      .nav:after,
+      .navbar-collapse:after,
+      .navbar-header:after,
+      .navbar:after,
+      .pager:after,
+      .panel-body:after,
+      .row:after {
+        clear: both;
+      }
+      .hide {
+        display: none !important;
+      }
+    </style>
+    <style>
+      .pretty * {
+        box-sizing: border-box;
+      }
+      .pretty {
+        position: relative;
+        display: inline-block;
+        margin-right: 1em;
+        white-space: nowrap;
+        line-height: 1;
+      }
+      .pretty input {
+        position: absolute;
+        left: 0;
+        top: 0;
+        min-width: 1em;
+        width: 100%;
+        height: 100%;
+        z-index: 2;
+        opacity: 0;
+        margin: 0;
+        padding: 0;
+        cursor: pointer;
+      }
+      .pretty .state label {
+        position: initial;
+        display: inline-block;
+        font-weight: 400;
+        margin: 0;
+        text-indent: 1.5em;
+        min-width: calc(1em + 2px);
+      }
+      .pretty .state label:after,
+      .pretty .state label:before {
+        content: "";
+        width: calc(1em + 2px);
+        height: calc(1em + 2px);
+        display: block;
+        box-sizing: border-box;
+        border-radius: 0;
+        border: 1px solid transparent;
+        z-index: 0;
+        position: absolute;
+        left: 0;
+        top: calc((0% - (100% - 1em)) - 8%);
+        background-color: transparent;
+      }
+      .pretty .state label:before {
+        border-color: #bdc3c7;
+      }
+      .pretty.p-svg .state .svg {
+        position: absolute;
+        font-size: 1em;
+        width: calc(1em + 2px);
+        height: calc(1em + 2px);
+        left: 0;
+        z-index: 1;
+        text-align: center;
+        line-height: normal;
+        top: calc((0% - (100% - 1em)) - 8%);
+        border: 1px solid transparent;
+        opacity: 0;
+      }
+      .pretty.p-svg .state svg {
+        margin: 0;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-flex: 1;
+        -ms-flex: 1;
+        flex: 1;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        line-height: 1;
+      }
+      .pretty.p-svg input:checked ~ .state .svg {
+        opacity: 1;
+      }
+      .pretty.p-round .state label:after,
+      .pretty.p-round .state label:before {
+        border-radius: 100%;
+      }
+      .pretty.p-smooth .icon,
+      .pretty.p-smooth .svg,
+      .pretty.p-smooth label:after,
+      .pretty.p-smooth label:before {
+        transition: all 0.5s ease;
+      }
+      .pretty.p-smooth input:checked + .state label:after {
+        transition: all 0.3s ease;
+      }
+      .pretty.p-smooth input:checked + .state .icon,
+      .pretty.p-smooth input:checked + .state .svg,
+      .pretty.p-smooth input:checked + .state img {
+        -webkit-animation: zoom 0.2s ease;
+        animation: zoom 0.2s ease;
+      }
+      .pretty input:checked ~ .state.p-success label:after,
+      .pretty.p-toggle .state.p-success label:after {
+        background-color: #5cb85c !important;
+      }
+      .pretty input:checked ~ .state.p-success .icon,
+      .pretty input:checked ~ .state.p-success .svg,
+      .pretty.p-toggle .state.p-success .icon,
+      .pretty.p-toggle .state.p-success .svg {
+        color: #fff;
+        stroke: #fff;
+      }
+    </style>
+    <link href="/css/style.css" rel="stylesheet" />
+    <link href="/css/menu.css" rel="stylesheet" />
+    <style>
+      #menu {
+        padding: 30px 30px 35px;
+      }
+      .right-menu {
+        padding: 5px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        overflow: hidden;
+      }
+      .container.center {
+        justify-content: center;
+      }
+      .line {
+        align-items: flex-start;
+        margin: 0;
+      }
+      .right-menu {
+        padding: 5px;
+      }
+      .right-menu > div > div {
+        display: flex;
+        justify-content: center;
+      }
+      .menu-wrapper.top {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      div#left-menu {
+        margin-bottom: 10px;
+      }
+      /*ad-b*/
+      .ad_bottom {
+        background-color: white;
+        z-index: 200;
+        padding: 5px;
+        margin: 5px 0;
+        border-radius: 15px;
+      }
+      @media (max-width: 640px), (max-height: 650px) {
+        .ad_bottom {
+          display: none;
+        }
+      }
+      /*f-cnt*/
+      .menu-links {
+        margin-bottom: 0;
+      }
+      @media (min-width: 641px) {
+        /*t-usr*/
+        .top-users {
+          height: 203px;
+          background-color: unset;
+          border-radius: unset;
+        }
+        .top-users__inner {
+          position: relative;
+          height: 203px;
+          background-color: white;
+          border-radius: 15px;
+          overflow: auto;
+          transition: 0.3s;
+        }
+        /*f-cnt*/
+        .line.bottom {
+          margin: 5px auto 0;
+        }
+      }
+      /*t-usr st*/
+      .top-users__inner::-webkit-scrollbar {
+        width: 16px;
+      }
+      .top-users__inner::-webkit-scrollbar-button {
+        height: 7px;
+      }
+      .top-users__inner::-webkit-scrollbar-thumb {
+        background-color: transparent;
+        border: 4px solid white;
+        border-radius: 15px;
+      }
+      .top-users__inner:hover::-webkit-scrollbar-thumb {
+        background-color: #999;
+      }
+      .top-users__inner::-webkit-scrollbar-thumb:hover {
+        background-color: #888;
+      }
+      .top-users__inner::-webkit-scrollbar-track,
+      .top-users__inner::-webkit-scrollbar-track-piece,
+      .top-users__inner::-webkit-scrollbar-corner,
+      .top-users__inner::-webkit-resizer {
+        background-color: transparent;
+      }
+      /*t-usr ed*/
+    </style>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-LTEDJX3D32"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-LTEDJX3D32");
+      gtag("config", "UA-42444803-3");
+    </script>
+  </head>
+  <body>
+    <noscript>
+      <iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-WV7SCVB"
+        height="0"
+        width="0"
+        style="display: none; visibility: hidden"></iframe>
+    </noscript>
+    <div class="body__inner">
+      <div id="gallery" onclick="if (event.target == this) this.hide()" style="display: none">
+        <div id="gallery-content">
+          <div id="gallery-header">Skins</div>
+          <div class="input-search">
+            <div class="skin-search">
+              <input placeholder="Search skin..." id="skin-search" />
+              <button type="submit" class="skin-search__submit">
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M17.8301 17.0207L13.1828 12.4477C14.3997 11.1255 15.1475 9.37682 15.1475 7.45261C15.1469 3.33639 11.7565 0 7.57388 0C3.39127 0 0.000854492 3.33639 0.000854492 7.45261C0.000854492 11.5688 3.39127 14.9052 7.57388 14.9052C9.38105 14.9052 11.0386 14.2802 12.3405 13.241L17.0058 17.832C17.2332 18.056 17.6022 18.056 17.8295 17.832C18.0574 17.6081 18.0574 17.2447 17.8301 17.0207ZM7.57388 13.7586C4.03494 13.7586 1.16607 10.9353 1.16607 7.45261C1.16607 3.96991 4.03494 1.14663 7.57388 1.14663C11.1128 1.14663 13.9817 3.96991 13.9817 7.45261C13.9817 10.9353 11.1128 13.7586 7.57388 13.7586Z"
+                    fill="#6B72C4" />
+                </svg>
+              </button>
+            </div>
+            <div id="gallery-tab-buttons" class="inline">
+              <div id="btn-tab1" class="button" onclick="changeTab(1)">Premium</div>
+              <div id="btn-tab2" class="button" onclick="changeTab(2)">Level</div>
+              <div id="btn-tab3" class="button" onclick="changeTab(3)">Owned</div>
+            </div>
+          </div>
+          <div class="tabs-wrapper">
+            <div class="gallery-tabs">
+              <hr style="width: 90%; margin-top: 0" />
+              <div id="gallery-tabs-content"></div>
+            </div>
+          </div>
+          <div id="gallery-body"></div>
+        </div>
+      </div>
+      <div id="overlays" style="display: none"></div>
+      <div class="container center">
+        <div class="line" id="__line1">
+          <div class="menu-wrapper top">
+            <div class="left-menu" id="left-menu">
+              <div class="profile-header">
+                <div class="avatar-area">
+                  <div class="profile-image">
+                    <img class="profile-image-icon" width="50" alt="agario profile" src="images/agario-profile.png" />
+                  </div>
+                </div>
+                <div class="coins">
+                  <div class="coins-num">
+                    <span class="coins-value">0</span>
+                    <img class="coins-num__coin" alt width="20" height="20" src="fonts/coin.svg" />
+                  </div>
+                  <button class="plus">
+                    <img src="fonts/plus.svg" width="14" height="13" alt class="plus__btn-image" />
+                  </button>
+                </div>
+              </div>
+              <div class="profile-body">
+                <h3 class="profile-name">Guest</h3>
+                <div class="new-meter">
+                  <span id="user-line-progress" style="width: 0%"></span>
+                  <div id="progress-next">0/0 XP</div>
+                  <div class="agario-star-level">
+                    <picture>
+                      <source srcset="images/agario-star.webp" type="image/webp" />
+                      <source srcset="agario-star.jp2" type="image/jp2" />
+                      <img width="45" height="45" src="images/agario-star.png" alt="Agario Private Server Star" />
+                    </picture>
+                    <div class="user-level">
+                      <div id="user-level">0</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="text-block" id="left_ad_block">
+              <div class="right-menu">
+                <div id="div-gpt-ad-1622841396282-0" style="min-width: 300px; min-height: 250px"></div>
+              </div>
+            </div>
+          </div>
+          <div id="menu-wrapper" class="menu-wrapper menu-wrapper-center">
+            <div id="menu" class="menu menu-center">
+              <div>
+                <div id="clans_and_settings">
+                  <button type="button" onclick="_cm_settings_open()">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M17.4249 7.45169C15.7658 7.45169 15.0874 6.27836 15.9124 4.83919C16.3891 4.00503 16.1049 2.94169 15.2708 2.46503L13.6849 1.55753C12.9608 1.12669 12.0258 1.38336 11.5949 2.10753L11.4941 2.28169C10.6691 3.72086 9.31242 3.72086 8.47825 2.28169L8.37742 2.10753C7.96492 1.38336 7.02992 1.12669 6.30575 1.55753L4.71992 2.46503C3.88575 2.94169 3.60158 4.01419 4.07825 4.84836C4.91242 6.27836 4.23408 7.45169 2.57492 7.45169C1.62159 7.45169 0.833252 8.23086 0.833252 9.19336V10.8067C0.833252 11.76 1.61242 12.5484 2.57492 12.5484C4.23408 12.5484 4.91242 13.7217 4.07825 15.1609C3.60158 15.995 3.88575 17.0584 4.71992 17.535L6.30575 18.4425C7.02992 18.8734 7.96492 18.6167 8.39575 17.8925L8.49658 17.7184C9.32158 16.2792 10.6783 16.2792 11.5124 17.7184L11.6133 17.8925C12.0441 18.6167 12.9791 18.8734 13.7033 18.4425L15.2891 17.535C16.1233 17.0584 16.4074 15.9859 15.9307 15.1609C15.0966 13.7217 15.7749 12.5484 17.4341 12.5484C18.3874 12.5484 19.1758 11.7692 19.1758 10.8067V9.19336C19.1666 8.24003 18.3874 7.45169 17.4249 7.45169ZM9.99992 12.9792C8.35908 12.9792 7.02075 11.6409 7.02075 10C7.02075 8.35919 8.35908 7.02086 9.99992 7.02086C11.6408 7.02086 12.9791 8.35919 12.9791 10C12.9791 11.6409 11.6408 12.9792 9.99992 12.9792Z"
+                        fill="#333136" />
+                    </svg>
+                  </button>
+                </div>
+                <div class="menu-center-content">
+                  <div class="menu__inner">
+                    <div class="menu__title">
+                      <h1 id="title">Sigmally</h1>
+                    </div>
+                    <div class="menu__item">
+                      <div class="form-group menu__form-group">
+                        <div class="form-group__flex">
+                          <div class="form-group__row">
+                            <div class="skin-select">
+                              <div class="skin-select__inner">
+                                <div id="js-skin-select-icon" class="skin-select__icon" onclick="openSkinsList()">
+                                  <div class="skin-select__icon-cross">
+                                    <div class="skin-select__icon-cross-items"></div>
+                                  </div>
+                                  <div class="skin-select__icon-text" id="js-skin-select-icon-text">Skins</div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="form-group__rows">
+                            <div class="form-group__row">
+                              <input id="nick" class="form-control" placeholder="Nickname" maxlength="15" />
+                            </div>
+                            <div class="form-group__row">
+                              <select
+                                id="gamemode"
+                                class="form-control gamemode-select"
+                                onchange="setserver(this.value)">
+                                <option id="option_0" value="u0.sigmally.com/ws/">US-1</option>
+                                <option id="option_1" value="u2.sigmally.com/ws/">US-2</option>
+                                <option id="option_2" value="u1.sigmally.com/ws/">Europe-1</option>
+                              </select>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <button id="play-btn" class="btn btn-play btn-success btn-needs-server">Play</button>
+                      <button class="sign-in-btn" id="signInBtn">
+                        <img src="fonts/google-icon.svg" width="18" height="18" alt="Google" />
+                        Sign in with Google
+                      </button>
+                      <div class="sign-in-out-btn hide" id="signOutBtn" onclick="signOut()">Sign out</div>
+                    </div>
+                    <div class="ch-lang">
+                      <ul class="ch-lang__items">
+                        <li class="ch-lang__item">
+                          <a class="ch-lang__btn" href="https://sigmally.com">
+                            <img class="ch-lang__flag" src="fonts/english.svg" alt="English" />
+                          </a>
+                        </li>
+                        <li class="ch-lang__item">
+                          <a class="ch-lang__btn" href="https://sigmally.com/es/">
+                            <img class="ch-lang__flag" src="fonts/spanish.svg" alt="Spanish" />
+                          </a>
+                        </li>
+                        <li class="ch-lang__item">
+                          <a class="ch-lang__btn" href="https://sigmally.com/tr/">
+                            <img class="ch-lang__flag" src="fonts/turkish.svg" alt="Turkish" />
+                          </a>
+                        </li>
+                        <li class="ch-lang__item">
+                          <a class="ch-lang__btn" href="https://sigmally.com/fr/">
+                            <img class="ch-lang__flag" src="fonts/french.svg" alt="French" />
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <a href="https://discord.gg/4j4Rc4dQTP" target="_blank" id="discord_link">
+                <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M19.4566 5.35132C21.7154 8.83814 22.8309 12.7712 22.4139 17.299C22.4121 17.3182 22.4026 17.3358 22.3876 17.3473C20.6771 18.666 19.0199 19.4663 17.3859 19.9971C17.3732 20.0011 17.3596 20.0009 17.347 19.9964C17.3344 19.992 17.3234 19.9835 17.3156 19.9721C16.9382 19.4207 16.5952 18.8393 16.2947 18.2287C16.2774 18.1928 16.2932 18.1495 16.3287 18.1353C16.8734 17.9198 17.3914 17.6615 17.8896 17.3557C17.9289 17.3316 17.9314 17.2725 17.8951 17.2442C17.7894 17.1617 17.6846 17.0751 17.5844 16.9885C17.5656 16.9725 17.5404 16.9693 17.5191 16.9801C14.2844 18.5484 10.7409 18.5484 7.46792 16.9801C7.44667 16.9701 7.42142 16.9735 7.40317 16.9893C7.30317 17.0759 7.19817 17.1617 7.09342 17.2442C7.05717 17.2725 7.06017 17.3316 7.09967 17.3557C7.59792 17.6557 8.11592 17.9198 8.65991 18.1363C8.69517 18.1505 8.71192 18.1928 8.69442 18.2287C8.40042 18.8401 8.05742 19.4215 7.67292 19.9729C7.65617 19.9952 7.62867 20.0055 7.60267 19.9971C5.97642 19.4663 4.31917 18.666 2.60868 17.3473C2.59443 17.3358 2.58418 17.3174 2.58268 17.2982C2.23418 13.3817 2.94442 9.41613 5.53717 5.35053C5.54342 5.33977 5.55292 5.33137 5.56392 5.32638C6.83967 4.71165 8.20642 4.25939 9.63491 4.00111C9.66091 3.99691 9.68691 4.00951 9.70041 4.03365C9.87691 4.36176 10.0787 4.78252 10.2152 5.12637C11.7209 4.88489 13.2502 4.88489 14.7874 5.12637C14.9239 4.78987 15.1187 4.36176 15.2944 4.03365C15.3007 4.02167 15.3104 4.01208 15.3221 4.00623C15.3339 4.00039 15.3471 3.99859 15.3599 4.00111C16.7892 4.26018 18.1559 4.71244 19.4306 5.32638C19.4419 5.33137 19.4511 5.33977 19.4566 5.35132ZM10.9807 12.798C10.9964 11.6401 10.1924 10.6821 9.18316 10.6821C8.18217 10.6821 7.38592 11.6317 7.38592 12.798C7.38592 13.9639 8.19792 14.9136 9.18316 14.9136C10.1844 14.9136 10.9807 13.9639 10.9807 12.798ZM17.6261 12.798C17.6419 11.6401 16.8379 10.6821 15.8289 10.6821C14.8277 10.6821 14.0314 11.6317 14.0314 12.798C14.0314 13.9639 14.8434 14.9136 15.8289 14.9136C16.8379 14.9136 17.6261 13.9639 17.6261 12.798Z"
+                    fill="white" />
+                </svg>
+                <span>Discord</span>
+              </a>
+            </div>
+          </div>
+          <div id="right-menu" class="menu-wrapper top">
+            <div class="top-users">
+              <div class="top-users__inner">
+                <table>
+                  <thead>
+                    <tr>
+                      <th></th>
+                      <th style="text-align: left">Top Users</th>
+                      <th>Season EXP</th>
+                    </tr>
+                  </thead>
+                  <tbody class="top-users__list"></tbody>
+                </table>
+              </div>
+            </div>
+            <div class="text-block" id="text-block">
+              <div class="right-menu">
+                <div id="div-gpt-ad-1622632389350-0" style="min-width: 300px; min-height: 250px"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="line line--hidden" id="__line2">
+          <div id="menu-wrapper" class="menu-wrapper menu-wrapper--stats-mode">
+            <div id="menu" class="menu menu--stats-mode">
+              <div class="menu__inner">
+                <div class="menu__title">
+                  <h1 id="title">Match Results</h1>
+                </div>
+                <div class="stats">
+                  <div class="stats__inner">
+                    <div class="stats__items">
+                      <div class="stats__item">
+                        <span class="stats__item-title"> Top Position </span>
+                        <span class="stats__item-value" id="top_leaderboard_position">0</span>
+                      </div>
+                      <div class="stats__item">
+                        <span class="stats__item-title"> Highest mass </span>
+                        <span class="stats__item-value" id="highest_mass">0</span>
+                      </div>
+                      <div class="stats__item">
+                        <span class="stats__item-title"> Time alive </span>
+                        <span class="stats__item-value" id="time_alive">0</span>
+                      </div>
+                      <div class="stats__item">
+                        <span class="stats__item-title"> Food eaten </span>
+                        <span class="stats__item-value" id="food_eaten">0</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <hr class="stats-hr" />
+                <div class="stats-btn">
+                  <div class="stats-btn__inner">
+                    <div class="stats-btn__row">
+                      <button onclick="Share('tw')" class="stats-btn__share-btn">
+                        <svg
+                          class="stats-btn__icon-svg"
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 511.537 511.537">
+                          <path
+                            style="fill: #ffffff"
+                            d="M357.038,49.172c-59.284,0.898-105.993,52.098-105.993,111.382v14.372 C145.052,156.063,92.954,127.319,35.466,67.137c-34.133,66.47,3.593,122.161,44.912,152.702c-27.846,0-51.2-3.593-69.165-19.761 c-1.796-0.898-3.593,0-2.695,1.797c15.27,55.691,67.368,96.112,107.789,107.789c-36.828,0-61.081,5.389-87.13-10.779 c-1.796-0.898-3.593,0-2.695,1.796c19.761,54.793,59.284,71.86,116.772,71.86c-28.744,21.558-67.368,43.116-140.126,44.912 c-2.695,0-4.491,3.593-1.796,5.389c26.947,22.456,93.418,39.523,186.835,39.523c153.6,0,278.456-136.533,278.456-305.404v-8.982 c24.253-8.982,37.726-30.54,44.912-52.098c0-0.898-0.898-1.796-1.797-1.796l-51.2,17.965c-0.898,0-1.796-1.796-0.898-2.695 C479.2,92.288,495.368,70.73,502.554,50.07c0,0-0.898-0.898-1.797-0.898c-24.253,9.881-47.607,19.761-65.572,25.151 c-2.695,0.898-6.288,0.898-8.982-0.898C414.526,67.137,379.494,49.172,357.038,49.172"></path>
                         </svg>
-                     </button>
-                  </div>
-                  <div id="gallery-tab-buttons" class="inline">
-                     <div id="btn-tab1" class="button" onclick="changeTab(1)">
-                        Premium
-                     </div>
-                     <div id="btn-tab2" class="button" onclick="changeTab(2)">
-                        Level
-                     </div>
-                     <div id="btn-tab3" class="button" onclick="changeTab(3)">
-                        Owned
-                     </div>
-                  </div>
-               </div>
-               <div class="tabs-wrapper">
-                  <div class="gallery-tabs">
-                     <hr style="width: 90%; margin-top: 0">
-                     <div id="gallery-tabs-content"></div>
-                  </div>
-               </div>
-               <div id="gallery-body"></div>
-            </div>
-         </div>
-         <div id="overlays" style="display: none"></div>
-         <div class="container center">
-            <div class="line" id="__line1">
-               <div class="menu-wrapper top">
-                  <div class="left-menu" id="left-menu">
-                     <div class="profile-header">
-                        <div class="avatar-area">
-                           <div class="profile-image">
-                              <img class="profile-image-icon" width="50" alt="agario profile" src="images/agario-profile.png">
-                           </div>
-                        </div>
-                        <div class="coins">
-                           <div class="coins-num">
-                              <span class="coins-value">0</span>
-                              <img class="coins-num__coin" alt width="20" height="20" src="fonts/coin.svg">
-                           </div>
-                           <button class="plus">
-                           <img src="fonts/plus.svg" width="14" height="13" alt class="plus__btn-image">
-                           </button>
-                        </div>
-                     </div>
-                     <div class="profile-body">
-                        <h3 class="profile-name">
-                           Guest
-                        </h3>
-                        <div class="new-meter">
-                           <span id="user-line-progress" style="width: 0%"></span>
-                           <div id="progress-next">0/0 XP</div>
-                           <div class="agario-star-level">
-                              <picture>
-                                 <source srcset="images/agario-star.webp" type="image/webp">
-                                 <source srcset="agario-star.jp2" type="image/jp2">
-                                 <img width="45" height="45" src="images/agario-star.png" alt="Agario Private Server Star">
-                              </picture>
-                              <div class="user-level">
-                                 <div id="user-level">0</div>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-                  <div class="text-block" id="left_ad_block">
-                     <div class="right-menu">
-                        <div id="div-gpt-ad-1622841396282-0" style="min-width: 300px; min-height: 250px"></div>
-                     </div>
-                  </div>
-               </div>
-               <div id="menu-wrapper" class="menu-wrapper menu-wrapper-center">
-                  <div id="menu" class="menu menu-center">
-                     <div>
-                        <div id="clans_and_settings">
-                           <button type="button" onclick="_cm_settings_open()">
-                              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                 <path d="M17.4249 7.45169C15.7658 7.45169 15.0874 6.27836 15.9124 4.83919C16.3891 4.00503 16.1049 2.94169 15.2708 2.46503L13.6849 1.55753C12.9608 1.12669 12.0258 1.38336 11.5949 2.10753L11.4941 2.28169C10.6691 3.72086 9.31242 3.72086 8.47825 2.28169L8.37742 2.10753C7.96492 1.38336 7.02992 1.12669 6.30575 1.55753L4.71992 2.46503C3.88575 2.94169 3.60158 4.01419 4.07825 4.84836C4.91242 6.27836 4.23408 7.45169 2.57492 7.45169C1.62159 7.45169 0.833252 8.23086 0.833252 9.19336V10.8067C0.833252 11.76 1.61242 12.5484 2.57492 12.5484C4.23408 12.5484 4.91242 13.7217 4.07825 15.1609C3.60158 15.995 3.88575 17.0584 4.71992 17.535L6.30575 18.4425C7.02992 18.8734 7.96492 18.6167 8.39575 17.8925L8.49658 17.7184C9.32158 16.2792 10.6783 16.2792 11.5124 17.7184L11.6133 17.8925C12.0441 18.6167 12.9791 18.8734 13.7033 18.4425L15.2891 17.535C16.1233 17.0584 16.4074 15.9859 15.9307 15.1609C15.0966 13.7217 15.7749 12.5484 17.4341 12.5484C18.3874 12.5484 19.1758 11.7692 19.1758 10.8067V9.19336C19.1666 8.24003 18.3874 7.45169 17.4249 7.45169ZM9.99992 12.9792C8.35908 12.9792 7.02075 11.6409 7.02075 10C7.02075 8.35919 8.35908 7.02086 9.99992 7.02086C11.6408 7.02086 12.9791 8.35919 12.9791 10C12.9791 11.6409 11.6408 12.9792 9.99992 12.9792Z" fill="#333136"/>
-                              </svg>
-                           </button>
-                        </div>
-                        <div class="menu-center-content">
-                           <div class="menu__inner">
-                              <div class="menu__title">
-                                 <h1 id="title">Sigmally</h1>
-                              </div>
-                              <div class="menu__item">
-                                 <div class="form-group menu__form-group">
-                                    <div class="form-group__flex">
-                                       <div class="form-group__row">
-                                          <div class="skin-select">
-                                             <div class="skin-select__inner">
-                                                <div id="js-skin-select-icon" class="skin-select__icon" onclick="openSkinsList()">
-                                                   <div class="skin-select__icon-cross">
-                                                      <div class="skin-select__icon-cross-items"></div>
-                                                   </div>
-                                                   <div class="skin-select__icon-text" id="js-skin-select-icon-text">
-                                                      Skins
-                                                   </div>
-                                                </div>
-                                             </div>
-                                          </div>
-                                       </div>
-                                       <div class="form-group__rows">
-                                          <div class="form-group__row">
-                                             <input id="nick" class="form-control" placeholder="Nickname" maxlength="15">
-                                          </div>
-                                          <div class="form-group__row">
-                                             <select id="gamemode" class="form-control gamemode-select" onchange="setserver(this.value)">
-                                                <option id="option_0" value="u0.sigmally.com/ws/">
-                                                   US-1
-                                                </option>
-                                                <option id="option_1" value="u2.sigmally.com/ws/">
-                                                   US-2
-                                                </option>
-                                                <option id="option_2" value="u1.sigmally.com/ws/">
-                                                   Europe-1
-                                                </option>
-                                             </select>
-                                          </div>
-                                       </div>
-                                    </div>
-                                 </div>
-                                 <button id="play-btn" class="btn btn-play btn-success btn-needs-server">
-                                 Play
-                                 </button>
-                                 <button class="sign-in-btn" id="signInBtn">
-                                 <img src="fonts/google-icon.svg" width="18" height="18" alt="Google">
-                                 Sign in with Google
-                                 </button>
-                                 <div class="sign-in-out-btn hide" id="signOutBtn" onclick="signOut()">
-                                    Sign out
-                                 </div>
-                              </div>
-                              <div class="ch-lang">
-                                 <ul class="ch-lang__items">
-                                    <li class="ch-lang__item">
-                                       <a class="ch-lang__btn" href="https://sigmally.com">
-                                       <img class="ch-lang__flag" src="fonts/english.svg" alt="English">
-                                       </a>
-                                    </li>
-                                    <li class="ch-lang__item">
-                                       <a class="ch-lang__btn" href="https://sigmally.com/es/">
-                                       <img class="ch-lang__flag" src="fonts/spanish.svg" alt="Spanish">
-                                       </a>
-                                    </li>
-                                    <li class="ch-lang__item">
-                                       <a class="ch-lang__btn" href="https://sigmally.com/tr/">
-                                       <img class="ch-lang__flag" src="fonts/turkish.svg" alt="Turkish">
-                                       </a>
-                                    </li>
-                                    <li class="ch-lang__item">
-                                       <a class="ch-lang__btn" href="https://sigmally.com/fr/">
-                                       <img class="ch-lang__flag" src="fonts/french.svg" alt="French">
-                                       </a>
-                                    </li>
-                                 </ul>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                     <a href="https://discord.gg/4j4Rc4dQTP" target="_blank" id="discord_link">
-                        <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                           <path d="M19.4566 5.35132C21.7154 8.83814 22.8309 12.7712 22.4139 17.299C22.4121 17.3182 22.4026 17.3358 22.3876 17.3473C20.6771 18.666 19.0199 19.4663 17.3859 19.9971C17.3732 20.0011 17.3596 20.0009 17.347 19.9964C17.3344 19.992 17.3234 19.9835 17.3156 19.9721C16.9382 19.4207 16.5952 18.8393 16.2947 18.2287C16.2774 18.1928 16.2932 18.1495 16.3287 18.1353C16.8734 17.9198 17.3914 17.6615 17.8896 17.3557C17.9289 17.3316 17.9314 17.2725 17.8951 17.2442C17.7894 17.1617 17.6846 17.0751 17.5844 16.9885C17.5656 16.9725 17.5404 16.9693 17.5191 16.9801C14.2844 18.5484 10.7409 18.5484 7.46792 16.9801C7.44667 16.9701 7.42142 16.9735 7.40317 16.9893C7.30317 17.0759 7.19817 17.1617 7.09342 17.2442C7.05717 17.2725 7.06017 17.3316 7.09967 17.3557C7.59792 17.6557 8.11592 17.9198 8.65991 18.1363C8.69517 18.1505 8.71192 18.1928 8.69442 18.2287C8.40042 18.8401 8.05742 19.4215 7.67292 19.9729C7.65617 19.9952 7.62867 20.0055 7.60267 19.9971C5.97642 19.4663 4.31917 18.666 2.60868 17.3473C2.59443 17.3358 2.58418 17.3174 2.58268 17.2982C2.23418 13.3817 2.94442 9.41613 5.53717 5.35053C5.54342 5.33977 5.55292 5.33137 5.56392 5.32638C6.83967 4.71165 8.20642 4.25939 9.63491 4.00111C9.66091 3.99691 9.68691 4.00951 9.70041 4.03365C9.87691 4.36176 10.0787 4.78252 10.2152 5.12637C11.7209 4.88489 13.2502 4.88489 14.7874 5.12637C14.9239 4.78987 15.1187 4.36176 15.2944 4.03365C15.3007 4.02167 15.3104 4.01208 15.3221 4.00623C15.3339 4.00039 15.3471 3.99859 15.3599 4.00111C16.7892 4.26018 18.1559 4.71244 19.4306 5.32638C19.4419 5.33137 19.4511 5.33977 19.4566 5.35132ZM10.9807 12.798C10.9964 11.6401 10.1924 10.6821 9.18316 10.6821C8.18217 10.6821 7.38592 11.6317 7.38592 12.798C7.38592 13.9639 8.19792 14.9136 9.18316 14.9136C10.1844 14.9136 10.9807 13.9639 10.9807 12.798ZM17.6261 12.798C17.6419 11.6401 16.8379 10.6821 15.8289 10.6821C14.8277 10.6821 14.0314 11.6317 14.0314 12.798C14.0314 13.9639 14.8434 14.9136 15.8289 14.9136C16.8379 14.9136 17.6261 13.9639 17.6261 12.798Z" fill="white"/>
+                        <span class="stats-btn__text"> Continue </span>
+                      </button>
+                      <button onclick="Share('fb')" class="stats-btn__share-btn">
+                        <svg class="stats-btn__icon-svg" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+                          <path
+                            style="fill: #ffffff"
+                            d="m437 0h-362c-41.351562 0-75 33.648438-75 75v362c0 41.351562 33.648438 75 75 75h151v-181h-60v-90h60v-61c0-49.628906 40.371094-90 90-90h91v90h-91v61h91l-15 90h-76v181h121c41.351562 0 75-33.648438 75-75v-362c0-41.351562-33.648438-75-75-75zm0 0"></path>
                         </svg>
-                        <span>Discord</span>
-                     </a>
+                        <span class="stats-btn__text"> Continue </span>
+                      </button>
+                    </div>
+                    <button id="continue_button" class="stats-btn__continue">Continue</button>
                   </div>
-               </div>
-               <div id="right-menu" class="menu-wrapper top">
-                  <div class="top-users">
-                     <div class="top-users__inner">
-                        <table>
-                           <thead>
-                              <tr>
-                                 <th></th>
-                                 <th style="text-align: left">
-                                    Top Users
-                                 </th>
-                                 <th>
-                                    Season EXP
-                                 </th>
-                              </tr>
-                           </thead>
-                           <tbody class="top-users__list"></tbody>
-                        </table>
-                     </div>
-                  </div>
-                  <div class="text-block" id="text-block">
-                     <div class="right-menu">
-                        <div id="div-gpt-ad-1622632389350-0" style="min-width: 300px; min-height: 250px"></div>
-                     </div>
-                  </div>
-               </div>
+                </div>
+              </div>
             </div>
-            <div class="line line--hidden" id="__line2">
-               <div id="menu-wrapper" class="menu-wrapper menu-wrapper--stats-mode">
-                  <div id="menu" class="menu menu--stats-mode">
-                     <div class="menu__inner">
-                        <div class="menu__title">
-                           <h1 id="title">
-                              Match Results
-                           </h1>
-                        </div>
-                        <div class="stats">
-                           <div class="stats__inner">
-                              <div class="stats__items">
-                                 <div class="stats__item">
-                                    <span class="stats__item-title">
-                                    Top Position
-                                    </span>
-                                    <span class="stats__item-value" id="top_leaderboard_position">0</span>
-                                 </div>
-                                 <div class="stats__item">
-                                    <span class="stats__item-title">
-                                    Highest mass
-                                    </span>
-                                    <span class="stats__item-value" id="highest_mass">0</span>
-                                 </div>
-                                 <div class="stats__item">
-                                    <span class="stats__item-title">
-                                    Time alive
-                                    </span>
-                                    <span class="stats__item-value" id="time_alive">0</span>
-                                 </div>
-                                 <div class="stats__item">
-                                    <span class="stats__item-title">
-                                    Food eaten
-                                    </span>
-                                    <span class="stats__item-value" id="food_eaten">0</span>
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-                        <hr class="stats-hr">
-                        <div class="stats-btn">
-                           <div class="stats-btn__inner">
-                              <div class="stats-btn__row">
-                                 <button onclick="Share('tw')" class="stats-btn__share-btn">
-                                    <svg class="stats-btn__icon-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 511.537 511.537">
-                                       <path style="fill: #ffffff" d="M357.038,49.172c-59.284,0.898-105.993,52.098-105.993,111.382v14.372 C145.052,156.063,92.954,127.319,35.466,67.137c-34.133,66.47,3.593,122.161,44.912,152.702c-27.846,0-51.2-3.593-69.165-19.761 c-1.796-0.898-3.593,0-2.695,1.797c15.27,55.691,67.368,96.112,107.789,107.789c-36.828,0-61.081,5.389-87.13-10.779 c-1.796-0.898-3.593,0-2.695,1.796c19.761,54.793,59.284,71.86,116.772,71.86c-28.744,21.558-67.368,43.116-140.126,44.912 c-2.695,0-4.491,3.593-1.796,5.389c26.947,22.456,93.418,39.523,186.835,39.523c153.6,0,278.456-136.533,278.456-305.404v-8.982 c24.253-8.982,37.726-30.54,44.912-52.098c0-0.898-0.898-1.796-1.797-1.796l-51.2,17.965c-0.898,0-1.796-1.796-0.898-2.695 C479.2,92.288,495.368,70.73,502.554,50.07c0,0-0.898-0.898-1.797-0.898c-24.253,9.881-47.607,19.761-65.572,25.151 c-2.695,0.898-6.288,0.898-8.982-0.898C414.526,67.137,379.494,49.172,357.038,49.172"></path>
-                                    </svg>
-                                    <span class="stats-btn__text">
-                                    Continue
-                                    </span>
-                                 </button>
-                                 <button onclick="Share('fb')" class="stats-btn__share-btn">
-                                    <svg class="stats-btn__icon-svg" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
-                                       <path style="fill: #ffffff" d="m437 0h-362c-41.351562 0-75 33.648438-75 75v362c0 41.351562 33.648438 75 75 75h151v-181h-60v-90h60v-61c0-49.628906 40.371094-90 90-90h91v90h-91v61h91l-15 90h-76v181h121c41.351562 0 75-33.648438 75-75v-362c0-41.351562-33.648438-75-75-75zm0 0"></path>
-                                    </svg>
-                                    <span class="stats-btn__text">
-                                    Continue
-                                    </span>
-                                 </button>
-                              </div>
-                              <button id="continue_button" class="stats-btn__continue">
-                              Continue
-                              </button>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-                  <div class="ad-block">
-                     <div class="ad-block__inner">
-                        <div id="div-gpt-ad-1622635433462-0" style="min-width: 300px; min-height: 250px"></div>
-                     </div>
-                  </div>
-                  <div class="ad-block-left">
-                     <div class="ad-block-left__inner">
-                        <div id="div-gpt-ad-1622636498971-0" style="min-width: 160px; min-height: 600px"></div>
-                     </div>
-                  </div>
-                  <div class="ad-block-right">
-                     <div class="ad-block-right__inner">
-                        <div id="div-gpt-ad-1622636569591-0" style="min-width: 160px; min-height: 600px"></div>
-                     </div>
-                  </div>
-               </div>
+            <div class="ad-block">
+              <div class="ad-block__inner">
+                <div id="div-gpt-ad-1622635433462-0" style="min-width: 300px; min-height: 250px"></div>
+              </div>
             </div>
-            <style>
-               #settings>.checkbox-grid {
-               grid-template-columns: 0.9fr 1.1fr;
-               }
-               #menu-nav {
-               position: absolute;
-               top: 0;
-               right: 0;
-               }
-               #menu-nav>#menu-links {
-               position: absolute;
-               top: 0;
-               right: 0;
-               width: max-content;
-               margin: 0;
-               padding: 6px 12px;
-               border-radius: 0px 0px 0px 10px;
-               }
-               #clans_and_settings {
-               margin-left: auto;
-               }
-               #clans_and_settings>button {
-               padding: 0;
-               margin: 0;
-               background: transparent;
-               border: none;
-               cursor: pointer;
-               }
-               #discord_link {
-               width: calc(100% - 20px);
-               height: 36px;
-               display: flex;
-               justify-content: center;
-               align-items: center;
-               background-color: rgba(88, 101, 242, 1);
-               border-radius: 6px;
-               margin: 0 auto;
-               }
-               #discord_link span {
-               margin-left: 4px;
-               color: white;
-               font-weight: 500;
-               font-size: 14px;
-               }
-               .line--hidden {
-               display: none;
-               }
-               #menu.menu--stats-mode {
-               border-radius: 12px;
-               padding: 10px;
-               }
-               div#menu-wrapper.menu-wrapper--stats-mode {
-               flex-direction: column;
-               }
-               .menu-wrapper-center {
-               min-width: 339px;
-               }
-               #menu-wrapper>.menu-center {
-               height: 519px;
-               display: flex;
-               flex-direction: column;
-               justify-content: space-between;
-               padding: 20px;
-               }
-               .menu-center #menu__title {
-               font-weight: bold;
-               }
-               .menu-center-content {
-               margin: 28px auto 0 auto;
-               width: calc(100% - 20px);
-               }
-               .menu-center>div {
-               width: 100%;
-               display: flex;
-               flex-direction: column;
-               }
-               .menu-center>div>.menu-center-content>div>.menu__item {
-               margin-top: 28px;
-               margin-bottom: 28px;
-               }
-               .menu-center>div>.menu-center-content>div>div>.menu__form-group {
-               margin-bottom: 28px;
-               }
-               .menu-center .form-group__flex>.form-group__row {
-               margin-right: 17px;
-               }
-               .menu-center #js-skin-select-icon {
-               width: 72px;
-               height: 72px;
-               font-weight: 400;
-               box-shadow: 0px 0px 10px 0px rgba(51, 49, 54, 0.25);
-               border: 1px solid rgba(200, 201, 217, 1)
-               }
-               .menu-center #js-skin-select-icon .skin-select__icon-cross {
-               background-color: #43A952;
-               border: 1px solid #5DB75D;
-               width: 25px;
-               height: 25px;
-               }
-               hr.stats-hr {
-               margin: 10px 0px;
-               }
-               .stats__inner {
-               width: 320px;
-               }
-               .stats__items {
-               display: grid;
-               grid-template-columns: 1fr 1fr;
-               grid-gap: 5px;
-               gap: 5px;
-               }
-               .stats__item>span {
-               display: block;
-               text-align: center;
-               }
-               .stats-btn__row {
-               display: flex;
-               padding-bottom: 5px;
-               }
-               .stats-btn__share-btn {
-               flex: 1;
-               }
-               .stats-btn__continue {
-               width: 100%;
-               }
-               .stats-btn__share-btn:first-child {
-               margin-right: 2.5px;
-               }
-               .stats-btn__share-btn:last-child {
-               margin-left: 2.5px;
-               }
-               .stats-btn__share-btn,
-               .stats-btn__continue {
-               height: 35px;
-               color: #fff;
-               font-weight: bold;
-               background-color: #428bca;
-               border: 1px solid #357ebd;
-               border-radius: 4px;
-               }
-               .stats-btn__continue:active,
-               .stats-btn__share-btn:active {
-               background-color: #3574ab;
-               }
-               .stats-btn__share-btn {
-               display: flex;
-               align-items: center;
-               }
-               .stats-btn__icon-svg {
-               height: 25px;
-               }
-               .stats-btn__text {
-               margin-left: 12px;
-               }
-               .ad-block {
-               padding-top: 10px;
-               }
-               .ad-block__inner {
-               background-color: white;
-               border-radius: 12px;
-               padding: 20px;
-               }
-               .ad-block-left,
-               .ad-block-right {
-               position: fixed;
-               top: 50%;
-               transform: translateY(-50%);
-               }
-               .ad-block-left {
-               left: 0px;
-               }
-               .ad-block-right {
-               right: 0px;
-               }
-               .ad-block-left__inner,
-               .ad-block-right__inner {
-               /* width: 160px; */
-               /* height: 600px; */
-               background-color: white;
-               border-radius: 5px;
-               padding: 5px;
-               }
-               @media (max-width: 682px) {
-               .ad-block-left,
-               .ad-block-right {
-               position: relative;
-               transform: unset;
-               margin-top: 10px;
-               }
-               .ad-block-right {
-               margin-bottom: 10px;
-               }
-               }
-               @media (max-width: 370px) {
-               .stats__inner {
-               width: 270px;
-               }
-               }
-            </style>
-            <div class="ad_bottom" id="ad_bottom">
-               <div id="div-gpt-ad-1622841482467-0" style="min-width: 728px; min-height: 90px"></div>
+            <div class="ad-block-left">
+              <div class="ad-block-left__inner">
+                <div id="div-gpt-ad-1622636498971-0" style="min-width: 160px; min-height: 600px"></div>
+              </div>
             </div>
-            <script>
-               const menu = document.querySelector("#menu");
-               const menuHeight = menu.clientHeight;
-               const textBlock = document.querySelector("#text-block");
-               textBlock.setAttribute("style", `height: ${menuHeight}px`);
-               
-               //document.getElementById("right-menu").style.height = document.getElementById("menu-wrapper").offsetHeight + "px";
-               textBlock.removeAttribute("style", "");
-            </script>
-         </div>
-         <script>
-            function closeAlert() {
-              document.querySelector("#connecting").hide();
+            <div class="ad-block-right">
+              <div class="ad-block-right__inner">
+                <div id="div-gpt-ad-1622636569591-0" style="min-width: 160px; min-height: 600px"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <style>
+          #settings > .checkbox-grid {
+            grid-template-columns: 0.9fr 1.1fr;
+          }
+          #menu-nav {
+            position: absolute;
+            top: 0;
+            right: 0;
+          }
+          #menu-nav > #menu-links {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: max-content;
+            margin: 0;
+            padding: 6px 12px;
+            border-radius: 0px 0px 0px 10px;
+          }
+          #clans_and_settings {
+            margin-left: auto;
+          }
+          #clans_and_settings > button {
+            padding: 0;
+            margin: 0;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+          }
+          #discord_link {
+            width: calc(100% - 20px);
+            height: 36px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgba(88, 101, 242, 1);
+            border-radius: 6px;
+            margin: 0 auto;
+          }
+          #discord_link span {
+            margin-left: 4px;
+            color: white;
+            font-weight: 500;
+            font-size: 14px;
+          }
+          .line--hidden {
+            display: none;
+          }
+          #menu.menu--stats-mode {
+            border-radius: 12px;
+            padding: 10px;
+          }
+          div#menu-wrapper.menu-wrapper--stats-mode {
+            flex-direction: column;
+          }
+          .menu-wrapper-center {
+            min-width: 339px;
+          }
+          #menu-wrapper > .menu-center {
+            height: 519px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 20px;
+          }
+          .menu-center #menu__title {
+            font-weight: bold;
+          }
+          .menu-center-content {
+            margin: 28px auto 0 auto;
+            width: calc(100% - 20px);
+          }
+          .menu-center > div {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+          }
+          .menu-center > div > .menu-center-content > div > .menu__item {
+            margin-top: 28px;
+            margin-bottom: 28px;
+          }
+          .menu-center > div > .menu-center-content > div > div > .menu__form-group {
+            margin-bottom: 28px;
+          }
+          .menu-center .form-group__flex > .form-group__row {
+            margin-right: 17px;
+          }
+          .menu-center #js-skin-select-icon {
+            width: 72px;
+            height: 72px;
+            font-weight: 400;
+            box-shadow: 0px 0px 10px 0px rgba(51, 49, 54, 0.25);
+            border: 1px solid rgba(200, 201, 217, 1);
+          }
+          .menu-center #js-skin-select-icon .skin-select__icon-cross {
+            background-color: #43a952;
+            border: 1px solid #5db75d;
+            width: 25px;
+            height: 25px;
+          }
+          hr.stats-hr {
+            margin: 10px 0px;
+          }
+          .stats__inner {
+            width: 320px;
+          }
+          .stats__items {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-gap: 5px;
+            gap: 5px;
+          }
+          .stats__item > span {
+            display: block;
+            text-align: center;
+          }
+          .stats-btn__row {
+            display: flex;
+            padding-bottom: 5px;
+          }
+          .stats-btn__share-btn {
+            flex: 1;
+          }
+          .stats-btn__continue {
+            width: 100%;
+          }
+          .stats-btn__share-btn:first-child {
+            margin-right: 2.5px;
+          }
+          .stats-btn__share-btn:last-child {
+            margin-left: 2.5px;
+          }
+          .stats-btn__share-btn,
+          .stats-btn__continue {
+            height: 35px;
+            color: #fff;
+            font-weight: bold;
+            background-color: #428bca;
+            border: 1px solid #357ebd;
+            border-radius: 4px;
+          }
+          .stats-btn__continue:active,
+          .stats-btn__share-btn:active {
+            background-color: #3574ab;
+          }
+          .stats-btn__share-btn {
+            display: flex;
+            align-items: center;
+          }
+          .stats-btn__icon-svg {
+            height: 25px;
+          }
+          .stats-btn__text {
+            margin-left: 12px;
+          }
+          .ad-block {
+            padding-top: 10px;
+          }
+          .ad-block__inner {
+            background-color: white;
+            border-radius: 12px;
+            padding: 20px;
+          }
+          .ad-block-left,
+          .ad-block-right {
+            position: fixed;
+            top: 50%;
+            transform: translateY(-50%);
+          }
+          .ad-block-left {
+            left: 0px;
+          }
+          .ad-block-right {
+            right: 0px;
+          }
+          .ad-block-left__inner,
+          .ad-block-right__inner {
+            /* width: 160px; */
+            /* height: 600px; */
+            background-color: white;
+            border-radius: 5px;
+            padding: 5px;
+          }
+          @media (max-width: 682px) {
+            .ad-block-left,
+            .ad-block-right {
+              position: relative;
+              transform: unset;
+              margin-top: 10px;
             }
-         </script>
-         <div id="connecting" class="connecting">
-            <div id="connecting-content" class="connecting__content">
-               <div class="alert alert-danger mb-0" role="alert">
-                  <div class="connecting-header">
-                     <h4 class="alert-heading">
-                        Connection!
-                     </h4>
-                     <div class="close-connecting-button">
-                        <i onclick="closeAlert()" class="fas fa-times"></i>
-                     </div>
-                  </div>
-                  <p class="mb-0">
-                     If you cannot join to the servers, then check your firewall which blocks the connection..
-                  </p>
-               </div>
-            </div>
-         </div>
-         <script>
-            function closeNeedToBeLoginnedAlert() {
-              document.querySelector("#needtobeloggined").hide();
+            .ad-block-right {
+              margin-bottom: 10px;
             }
-         </script>
-         <div id="needtobeloggined" class="connecting">
-            <div id="connecting-contents" class="connecting__content">
-               <div class="alert alert-danger mb-0" role="alert">
-                  <div class="connecting-header">
-                     <h4 class="alert-heading">
-                        Error!
-                     </h4>
-                     <div class="close-connecting-button">
-                        <i onclick="closeNeedToBeLoginnedAlert()" class="fas fa-times"></i>
-                     </div>
-                  </div>
-                  <p class="mb-0">
-                     You must be logged in to open shop
-                  </p>
-               </div>
+          }
+          @media (max-width: 370px) {
+            .stats__inner {
+              width: 270px;
+            }
+          }
+        </style>
+        <div class="ad_bottom" id="ad_bottom">
+          <div id="div-gpt-ad-1622841482467-0" style="min-width: 728px; min-height: 90px"></div>
+        </div>
+        <script>
+          const menu = document.querySelector("#menu");
+          const menuHeight = menu.clientHeight;
+          const textBlock = document.querySelector("#text-block");
+          textBlock.setAttribute("style", `height: ${menuHeight}px`);
+
+          //document.getElementById("right-menu").style.height = document.getElementById("menu-wrapper").offsetHeight + "px";
+          textBlock.removeAttribute("style", "");
+        </script>
+      </div>
+      <script>
+        function closeAlert() {
+          document.querySelector("#connecting").hide();
+        }
+      </script>
+      <div id="connecting" class="connecting">
+        <div id="connecting-content" class="connecting__content">
+          <div class="alert alert-danger mb-0" role="alert">
+            <div class="connecting-header">
+              <h4 class="alert-heading">Connection!</h4>
+              <div class="close-connecting-button">
+                <i onclick="closeAlert()" class="fas fa-times"></i>
+              </div>
             </div>
-         </div>
-         <div id="mobileStuff" style="display: none">
-            <div id="touchpad"></div>
-            <div id="touchCircle" style="display: none"></div>
-            <img src="images/agario-split.png" alt="agario split" id="splitBtn">
-            <img src="images/agario-eject.png" alt="agario eject" id="ejectBtn">
-         </div>
-         <canvas id="canvas" width="800" height="600"></canvas>
-         <div id="chat_block" class="chatblock">
-            <div id="chat_scrollbar" class="chatblock__scrollbar">
-               <div id="chat_thumb" class="chatblock__scrollbar-thumb"></div>
+            <p class="mb-0">
+              If you cannot join to the servers, then check your firewall which blocks the connection..
+            </p>
+          </div>
+        </div>
+      </div>
+      <script>
+        function closeNeedToBeLoginnedAlert() {
+          document.querySelector("#needtobeloggined").hide();
+        }
+      </script>
+      <div id="needtobeloggined" class="connecting">
+        <div id="connecting-contents" class="connecting__content">
+          <div class="alert alert-danger mb-0" role="alert">
+            <div class="connecting-header">
+              <h4 class="alert-heading">Error!</h4>
+              <div class="close-connecting-button">
+                <i onclick="closeNeedToBeLoginnedAlert()" class="fas fa-times"></i>
+              </div>
             </div>
-            <button id="chat_vsbltyBtn" class="chatblock__button chatblock__visability">
-            <i class="fa fa-eye"></i>
+            <p class="mb-0">You must be logged in to open shop</p>
+          </div>
+        </div>
+      </div>
+      <div id="mobileStuff" style="display: none">
+        <div id="touchpad"></div>
+        <div id="touchCircle" style="display: none"></div>
+        <img src="images/agario-split.png" alt="agario split" id="splitBtn" />
+        <img src="images/agario-eject.png" alt="agario eject" id="ejectBtn" />
+      </div>
+      <canvas id="canvas" width="800" height="600"></canvas>
+      <div id="chat_block" class="chatblock">
+        <div id="chat_scrollbar" class="chatblock__scrollbar">
+          <div id="chat_thumb" class="chatblock__scrollbar-thumb"></div>
+        </div>
+        <button id="chat_vsbltyBtn" class="chatblock__button chatblock__visability">
+          <i class="fa fa-eye"></i>
+        </button>
+        <input
+          type="text"
+          id="chat_textbox"
+          class="chatblock__textarea"
+          placeholder="Press Enter To Chat"
+          maxlength="200" />
+      </div>
+      <div style="font-family: Ubuntu, sans-serif"></div>
+    </div>
+    <div id="menu-nav">
+      <div class="menu-links" id="menu-links">
+        <a class="link" href="/privacy.html"> Policy </a> | <a class="link" href="/terms.html"> Terms </a> |
+        <a class="link" href="/partners.html"> Partners </a> |
+        <button class="link_btn" onclick="_cm_open()">How to play Agario</button>
+      </div>
+    </div>
+    <footer>
+      <script src="/js/api_client.js"></script>
+      <script src="/js/gallery.js"></script>
+      <script src="/js/client.js"></script>
+      <script>
+        startApp(document.getElementById("signInBtn"));
+      </script>
+    </footer>
+    <div id="cm_modal__rules" class="ctrl-modal ctrl-modal--hidden">
+      <div class="ctrl-modal__overlay">
+        <div class="ctrl-modal__modal">
+          <div class="ctrl-modal__header">
+            <div class="ctrl-modal__title h3">How to play</div>
+            <button id="cm_close" class="ctrl-modal__close">
+              <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 512 512" width="24px" fill="#333333">
+                <path
+                  d="m256 512c-141.160156 0-256-114.839844-256-256s114.839844-256 256-256 256 114.839844 256 256-114.839844 256-256 256zm0-475.429688c-120.992188 0-219.429688 98.4375-219.429688 219.429688s98.4375 219.429688 219.429688 219.429688 219.429688-98.4375 219.429688-219.429688-98.4375-219.429688-219.429688-219.429688zm0 0" />
+                <path
+                  d="m347.429688 365.714844c-4.679688 0-9.359376-1.785156-12.929688-5.359375l-182.855469-182.855469c-7.144531-7.144531-7.144531-18.714844 0-25.855469 7.140625-7.140625 18.714844-7.144531 25.855469 0l182.855469 182.855469c7.144531 7.144531 7.144531 18.714844 0 25.855469-3.570313 3.574219-8.246094 5.359375-12.925781 5.359375zm0 0" />
+                <path
+                  d="m164.570312 365.714844c-4.679687 0-9.355468-1.785156-12.925781-5.359375-7.144531-7.140625-7.144531-18.714844 0-25.855469l182.855469-182.855469c7.144531-7.144531 18.714844-7.144531 25.855469 0 7.140625 7.140625 7.144531 18.714844 0 25.855469l-182.855469 182.855469c-3.570312 3.574219-8.25 5.359375-12.929688 5.359375zm0 0" />
+              </svg>
             </button>
-            <input type="text" id="chat_textbox" class="chatblock__textarea" placeholder="Press Enter To Chat" maxlength="200">
-         </div>
-         <div style="font-family: &#x27;Ubuntu&#x27;, sans-serif"></div>
+          </div>
+          <div class="ctrl-modal__content">
+            <h5 class="menu__desc-title"><b>Agario Controls</b></h5>
+            <p class="menu__desc-text"></p>
+            <ul>
+              <li>Eject Mass - W</li>
+              <li>Chat - ENTER</li>
+              <li>Split - SPACE</li>
+              <li>Navigation - Mouse</li>
+            </ul>
+            <h5 class="menu__desc-title">
+              <b>Agario Registration</b>
+            </h5>
+            <p class="menu__desc-text">After Registration, you will be able to save your progress.</p>
+            <h5 class="menu__desc-title">
+              <b>How to hide agario player names and skins</b>
+            </h5>
+            <p class="menu__desc-text">
+              On the main menu clear checkboxes "Skin", "Name". Skins and nicknames will be hidden.
+            </p>
+            <h5 class="menu__desc-title">
+              <b>How to change agario skin</b>
+            </h5>
+            <p class="menu__desc-text">
+              Click the "Skins" button and then choose one of the available skins. All skins have their names. If you
+              want to add custom skins contact admin in Discord.
+            </p>
+            <h5 class="menu__desc-title">
+              <b>How to make a white background in Agario</b>
+            </h5>
+            <p class="menu__desc-text">
+              Clear the "Dark" checkbox on the main menu. Also, you can use the "Grid" option which marks each sector in
+              the background.
+            </p>
+            <h5 class="menu__desc-title">
+              <b>How to fix Agario lags</b>
+            </h5>
+            <div class="menu__desc-text">
+              Close apps that may use internet traffic. Restart browser. Disable the "Skin" option, they cause
+              additional load. Check if someone uses the same connection.
+            </div>
+            <h5 class="menu__desc-title">
+              <b>How to split in agario?</b>
+            </h5>
+            <div class="menu__desc-text">
+              All you need to split is to press the SPACE button and have a mass of more than 90. Cells that have less
+              than 90 mass can’t split.
+            </div>
+            <h5 class="menu__desc-title">
+              <b>How to play agario?</b>
+            </h5>
+            <div class="menu__desc-text">
+              Your main goal is to become the biggest player on the map. To achieve these you need to eat small pellets
+              on the map and after that, you need to eat other players that are smaller than you. Also, you need to be
+              careful and avoid bigger cells.
+            </div>
+            <h5 class="menu__desc-title">
+              <b>How to eat viruses in agario?</b>
+            </h5>
+            <div class="menu__desc-text">
+              If you want to eat a virus in agario, you should be split into 16 cells. Because you can’t split more, you
+              can easily eat viruses. One more condition: you should be bigger than the virus.
+            </div>
+            <h5 class="menu__desc-title">
+              <b>How to merge in agario?</b>
+            </h5>
+            <div class="menu__desc-text">
+              If you want to recombine in agario you should wait 30 seconds and after that, you will automatically
+              merge.
+            </div>
+            <h5 class="menu__desc-title">
+              <b>How to be good at agario?</b>
+            </h5>
+            <div class="menu__desc-text">
+              To become a better player you need to have more game practice and to watch youtube videos of how other
+              gamers play. Also, you can record your screen and analyze your game.
+            </div>
+            <h5 class="menu__desc-title">
+              <b>How to get big in agario?</b>
+            </h5>
+            <div class="menu__desc-text">
+              The best tactic is to be careful as you can. Just eat pellets, try not to split, and avoid big players.
+            </div>
+            <h5 class="menu__desc-title">
+              <b>How to shoot in agario?</b>
+            </h5>
+            <div class="menu__desc-text">
+              Some players want to shoot viruses into other players. For doing that you need to eject 5 pellets (Press W
+              button) into the virus. After that, the virus will be split.
+            </div>
+            <h5 class="menu__desc-title">
+              <b>How to play agario with friends?</b>
+            </h5>
+            <div class="menu__desc-text">
+              To play agario with friends you need to connect to the same server. Just select “US” or “EU” server.
+            </div>
+            <h5 class="menu__desc-title">
+              <b>How to record agario?</b>
+            </h5>
+            <div class="menu__desc-text">
+              If you want to record your game you need to install a recording program on your computer. For example
+              Fraps or Bandicam.
+            </div>
+            <h5 class="menu__desc-title">
+              <b>How to feed in agario?</b>
+            </h5>
+            <div class="menu__desc-text">
+              If you want to give mass to another player in the agario, you can split or eject mass.
+            </div>
+            <h5 class="menu__desc-title">
+              <b>How to zoom out in agario?</b>
+            </h5>
+            <div class="menu__desc-text">To zoom out in agario you need to use the scroll.</div>
+            <h5 class="menu__desc-title">
+              <b>What is a virus in agario?</b>
+            </h5>
+            <div class="menu__desc-text">
+              A virus is a type of cell in agario. If you touch it then your cell will be split.
+            </div>
+            <h5 class="menu__desc-title">
+              <b>How to level up in agario?</b>
+            </h5>
+            <div class="menu__desc-text">
+              If you want to level up in agario, you need to earn a lot of points. To achieve that goal you need to eat
+              other players and pellets on the map. Also, other players can share their mass with you.
+            </div>
+            <h5 class="menu__desc-title">
+              <b>How to play agario at school?</b>
+            </h5>
+            <div class="menu__desc-text">
+              If you want to play unblocked agario at school, you just need to play agario on our site.
+            </div>
+            <h5 class="menu__desc-title">
+              <b>Is agario modded?</b>
+            </h5>
+            <div class="menu__desc-text">
+              Yes, agar.io is onlnie modded game. All players move faster, cells have bigger mass, players lose mass
+              faster too.
+            </div>
+            <h5 class="menu__desc-title">
+              <b>Essential tips for Agar.io</b>
+            </h5>
+            <div class="menu__desc-text">
+              Today we will cover the necessary aspects of the game and examine a few cell growth strategies. The game
+              is available both within the browser and as an app. Agar.io has become popular and loved by numerous
+              people, not because of the right graphics but because of gameplay.
+            </div>
+            <h5 class="menu__desc-title">
+              <b>How to become a giant cell in Agario</b>
+            </h5>
+            <div class="menu__desc-text">
+              The game's point is not to win but to keep the giant cell as long as possible. How do you do it quickly
+              and make it last? Our team has prepared some strategies that will be useful to you. You have to be patient
+              if you want to win. These strategies don't work immediately.
+            </div>
+            <h5 class="menu__desc-title">
+              <b>Easy start in Agario</b>
+            </h5>
+            <div class="menu__desc-text">
+              How can you successfully play the game without basic knowledge of controls? You can't! And we still need
+              to win. There is some difference between playing through an app and playing in a browser window. The
+              difference is in the controls. If you control the cell with the mouse in the browser, in the app, you do
+              it with your fingers.
+              <ul>
+                <li>Don't split at the start of the game, or you'll just get eaten straight away.</li>
+                <li>Please stay away from prominent opponents, or they will eat you up.</li>
+                <li>Are you getting bigger? Don't get too excited. You are also getting slower.</li>
+                <li>
+                  Have you met an opponent of your size? He will not be able to overcome you, and you will go through
+                  each other.
+                </li>
+              </ul>
+            </div>
+            <h5 class="menu__desc-title">
+              <b>Use surroundings in Agario to win.</b>
+            </h5>
+            <div class="menu__desc-text">
+              In Agario private server you need to adapt to your environment and trick bigger opponents with green
+              objects called viruses. These dangerous objects cannot harm you if you are smaller than them. A much
+              bigger opponent won't take any chances and get at you while you're around viruses. But avoid the viruses
+              when you're big. Otherwise, they will tear you apart into small pieces, and other players will take
+              advantage of it.
+            </div>
+            <h5 class="menu__desc-title">
+              <b>Get all pieces together quickly!</b>
+            </h5>
+            <div class="menu__desc-text">
+              Being a large cell, you will inevitably need to split it. Some advice on this:
+              <ul>
+                <li>You find it harder to eat your opponents because you are big and slow.</li>
+                <li>Split into the enemy!</li>
+                <li>Move cautiously in a state of separation. Opponents do not sleep.</li>
+              </ul>
+              Your two separated cells stand together and must come together to reunite.
+            </div>
+            <h5 class="menu__desc-title">
+              <b>Remember: you are losing size.</b>
+            </h5>
+            <div class="menu__desc-text">
+              You've probably guessed by now. Every second when you are playing agario game you lose in mass. Also, the
+              bigger you are, the faster you lose. You should notice these changes in the score table. The problem is
+              that the table only shows the peak of your rating. But the problem is solvable. That you have lost a lot
+              in mass can be seen by how many points are added by eating other cells. Eat everyone, but be cautious
+              about larger cells.The longer you don't eat anything, the faster you lose weight.
+            </div>
+            <h5 class="menu__desc-title"><b>Agario strategy</b></h5>
+            <div class="menu__desc-text">
+              Once we've given you some initial information on Agario controls and essential survival tips for the game,
+              we move on to the most important thing of all: strategy. There are about 100 players in the regular game.
+              So agree, it's not easy to survive.
+            </div>
+            <h5 class="menu__desc-title">
+              <b>The very beginning: run and hide</b>
+            </h5>
+            <div class="menu__desc-text">
+              Do not challenge yourself or other players at the start on the agario pvp server. First, you should
+              swallow up points on the map. If your opponent has spotted you and started to chase you, try your best to
+              run away. Never cram yourself into a corner of the map. Otherwise, players will kill you. Also, remember
+              the advice with viruses! Collect points, watch out for prominent opponents. Split yourself! This is the
+              way to win! When you have finally achieved a result in size, you're going to split yourself up and shoot
+              the second part at your opponent, thereby quickly engulfing him. The opponent will eat your second part if
+              you miscalculate your mass. You must not divide yourself too often. Everything is on track as long as no
+              big adversaries are around. But as soon as they appear, all your small parts will be eaten in one go. You
+              must be extremely careful if you are in one of the top five positions. Don't split more than twice, or you
+              will be swallowed up.
+            </div>
+            <h5 class="menu__desc-title"><b>Corner them!</b></h5>
+            <div class="menu__desc-text">
+              If you have become the giant cell playing agario online, you have become the game's slowest cell. But
+              that's okay. Try to corner your opponents. This will help you to eat them.
+            </div>
+            <h5 class="menu__desc-title">
+              <b>The essence of the Agario game</b>
+            </h5>
+            <div class="menu__desc-text">
+              The gameplay is simple and straightforward: dominate or be dominated by others. The problem with slowness
+              when you're large could be a challenge, but we solved it above. I hope our tips are going to help you with
+              the game! Win and become the biggest!
+            </div>
+          </div>
+          <div class="ctrl-modal__footer">
+            <button id="cm_confirm" class="btn btn-success">Got it!</button>
+          </div>
+        </div>
       </div>
-      <div id="menu-nav">
-         <div class="menu-links" id="menu-links">
-            <a class="link" href="/privacy.html">
-            Policy
-            </a> |
-            <a class="link" href="/terms.html">
-            Terms
-            </a> |
-            <a class="link" href="/partners.html">
-            Partners
-            </a> |
-            <button class="link_btn" onclick="_cm_open()">
-            How to play Agario
+    </div>
+    <div id="cm_modal__settings" class="ctrl-modal ctrl-modal--hidden">
+      <div class="ctrl-modal__overlay">
+        <div class="ctrl-modal__modal">
+          <div class="ctrl-modal__header">
+            <div class="ctrl-modal__title h3">Settings</div>
+            <button id="cm_close__settings" class="ctrl-modal__close">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M1.6001 14.4L14.4001 1.59998M14.4001 14.4L1.6001 1.59998"
+                  stroke="#333136"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
             </button>
-         </div>
-      </div>
-      <footer>
-         <script src="/js/api_client.js"></script>
-         <script src="/js/gallery.js"></script>
-         <script src="/js/client.js"></script>
-         <script>
-            startApp(document.getElementById("signInBtn"));
-         </script>
-      </footer>
-      <div id="cm_modal__rules" class="ctrl-modal ctrl-modal--hidden">
-         <div class="ctrl-modal__overlay">
-            <div class="ctrl-modal__modal">
-               <div class="ctrl-modal__header">
-                  <div class="ctrl-modal__title h3">How to play</div>
-                  <button id="cm_close" class="ctrl-modal__close">
-                     <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 512 512" width="24px" fill="#333333">
-                        <path d="m256 512c-141.160156 0-256-114.839844-256-256s114.839844-256 256-256 256 114.839844 256 256-114.839844 256-256 256zm0-475.429688c-120.992188 0-219.429688 98.4375-219.429688 219.429688s98.4375 219.429688 219.429688 219.429688 219.429688-98.4375 219.429688-219.429688-98.4375-219.429688-219.429688-219.429688zm0 0"/>
-                        <path d="m347.429688 365.714844c-4.679688 0-9.359376-1.785156-12.929688-5.359375l-182.855469-182.855469c-7.144531-7.144531-7.144531-18.714844 0-25.855469 7.140625-7.140625 18.714844-7.144531 25.855469 0l182.855469 182.855469c7.144531 7.144531 7.144531 18.714844 0 25.855469-3.570313 3.574219-8.246094 5.359375-12.925781 5.359375zm0 0"/>
-                        <path d="m164.570312 365.714844c-4.679687 0-9.355468-1.785156-12.925781-5.359375-7.144531-7.140625-7.144531-18.714844 0-25.855469l182.855469-182.855469c7.144531-7.144531 18.714844-7.144531 25.855469 0 7.140625 7.140625 7.144531 18.714844 0 25.855469l-182.855469 182.855469c-3.570312 3.574219-8.25 5.359375-12.929688 5.359375zm0 0"/>
-                     </svg>
-                  </button>
-               </div>
-               <div class="ctrl-modal__content">
-                  <h5 class="menu__desc-title"><b>Agario Controls</b></h5>
-                  <p class="menu__desc-text"></p>
-                  <ul>
-                     <li>Eject Mass - W</li>
-                     <li>Chat - ENTER</li>
-                     <li>Split - SPACE</li>
-                     <li>Navigation - Mouse</li>
-                  </ul>
-                  <h5 class="menu__desc-title">
-                     <b>Agario Registration</b>
-                  </h5>
-                  <p class="menu__desc-text">
-                     After Registration, you will be able to save your
-                     progress.
-                  </p>
-                  <h5 class="menu__desc-title">
-                     <b>How to hide agario player names and skins</b>
-                  </h5>
-                  <p class="menu__desc-text">
-                     On the main menu clear checkboxes "Skin", "Name".
-                     Skins and nicknames will be hidden.
-                  </p>
-                  <h5 class="menu__desc-title">
-                     <b>How to change agario skin</b>
-                  </h5>
-                  <p class="menu__desc-text">
-                     Click the "Skins" button and then choose one of the
-                     available skins. All skins have their names. If you
-                     want to add custom skins contact admin in Discord.
-                  </p>
-                  <h5 class="menu__desc-title">
-                     <b>How to make a white background in Agario</b>
-                  </h5>
-                  <p class="menu__desc-text">
-                     Clear the "Dark" checkbox on the main menu. Also,
-                     you can use the "Grid" option which marks each
-                     sector in the background.
-                  </p>
-                  <h5 class="menu__desc-title">
-                     <b>How to fix Agario lags</b>
-                  </h5>
-                  <div class="menu__desc-text">
-                     Close apps that may use internet traffic. Restart
-                     browser. Disable the "Skin" option, they cause
-                     additional load. Check if someone uses the same
-                     connection.
-                  </div>
-                  <h5 class="menu__desc-title">
-                     <b>How to split in agario?</b>
-                  </h5>
-                  <div class="menu__desc-text">
-                     All you need to split is to press the SPACE button
-                     and have a mass of more than 90. Cells that have
-                     less than 90 mass can’t split.
-                  </div>
-                  <h5 class="menu__desc-title">
-                     <b>How to play agario?</b>
-                  </h5>
-                  <div class="menu__desc-text">
-                     Your main goal is to become the biggest player on
-                     the map. To achieve these you need to eat small
-                     pellets on the map and after that, you need to eat
-                     other players that are smaller than you. Also, you
-                     need to be careful and avoid bigger cells.
-                  </div>
-                  <h5 class="menu__desc-title">
-                     <b>How to eat viruses in agario?</b>
-                  </h5>
-                  <div class="menu__desc-text">
-                     If you want to eat a virus in agario, you should be
-                     split into 16 cells. Because you can’t split more,
-                     you can easily eat viruses. One more condition: you
-                     should be bigger than the virus.
-                  </div>
-                  <h5 class="menu__desc-title">
-                     <b>How to merge in agario?</b>
-                  </h5>
-                  <div class="menu__desc-text">
-                     If you want to recombine in agario you should wait
-                     30 seconds and after that, you will automatically
-                     merge.
-                  </div>
-                  <h5 class="menu__desc-title">
-                     <b>How to be good at agario?</b>
-                  </h5>
-                  <div class="menu__desc-text">
-                     To become a better player you need to have more game
-                     practice and to watch youtube videos of how other
-                     gamers play. Also, you can record your screen and
-                     analyze your game.
-                  </div>
-                  <h5 class="menu__desc-title">
-                     <b>How to get big in agario?</b>
-                  </h5>
-                  <div class="menu__desc-text">
-                     The best tactic is to be careful as you can. Just
-                     eat pellets, try not to split, and avoid big
-                     players.
-                  </div>
-                  <h5 class="menu__desc-title">
-                     <b>How to shoot in agario?</b>
-                  </h5>
-                  <div class="menu__desc-text">
-                     Some players want to shoot viruses into other
-                     players. For doing that you need to eject 5 pellets
-                     (Press W button) into the virus. After that, the
-                     virus will be split.
-                  </div>
-                  <h5 class="menu__desc-title">
-                     <b>How to play agario with friends?</b>
-                  </h5>
-                  <div class="menu__desc-text">
-                     To play agario with friends you need to connect to
-                     the same server. Just select “US” or “EU” server.
-                  </div>
-                  <h5 class="menu__desc-title">
-                     <b>How to record agario?</b>
-                  </h5>
-                  <div class="menu__desc-text">
-                     If you want to record your game you need to install
-                     a recording program on your computer. For example
-                     Fraps or Bandicam.
-                  </div>
-                  <h5 class="menu__desc-title">
-                     <b>How to feed in agario?</b>
-                  </h5>
-                  <div class="menu__desc-text">
-                     If you want to give mass to another player in the
-                     agario, you can split or eject mass.
-                  </div>
-                  <h5 class="menu__desc-title">
-                     <b>How to zoom out in agario?</b>
-                  </h5>
-                  <div class="menu__desc-text">
-                     To zoom out in agario you need to use the scroll.
-                  </div>
-                  <h5 class="menu__desc-title">
-                     <b>What is a virus in agario?</b>
-                  </h5>
-                  <div class="menu__desc-text">
-                     A virus is a type of cell in agario. If you touch it
-                     then your cell will be split.
-                  </div>
-                  <h5 class="menu__desc-title">
-                     <b>How to level up in agario?</b>
-                  </h5>
-                  <div class="menu__desc-text">
-                     If you want to level up in agario, you need to earn
-                     a lot of points. To achieve that goal you need to
-                     eat other players and pellets on the map. Also,
-                     other players can share their mass with you.
-                  </div>
-                  <h5 class="menu__desc-title">
-                     <b>How to play agario at school?</b>
-                  </h5>
-                  <div class="menu__desc-text">
-                     If you want to play unblocked agario at school, you
-                     just need to play agario on our site.
-                  </div>
-                  <h5 class="menu__desc-title">
-                     <b>Is agario modded?</b>
-                  </h5>
-                  <div class="menu__desc-text">
-                     Yes, agar.io is onlnie modded game. All players move
-                     faster, cells have bigger mass, players lose mass
-                     faster too.
-                  </div>
-                  <h5 class="menu__desc-title">
-                     <b>Essential tips for Agar.io</b>
-                  </h5>
-                  <div class="menu__desc-text">
-                     Today we will cover the necessary aspects of the
-                     game and examine a few cell growth strategies. The
-                     game is available both within the browser and as an
-                     app. Agar.io has become popular and loved by
-                     numerous people, not because of the right graphics
-                     but because of gameplay.
-                  </div>
-                  <h5 class="menu__desc-title">
-                     <b>How to become a giant cell in Agario</b>
-                  </h5>
-                  <div class="menu__desc-text">
-                     The game's point is not to win but to keep the giant
-                     cell as long as possible. How do you do it quickly
-                     and make it last? Our team has prepared some
-                     strategies that will be useful to you. You have to
-                     be patient if you want to win. These strategies
-                     don't work immediately.
-                  </div>
-                  <h5 class="menu__desc-title">
-                     <b>Easy start in Agario</b>
-                  </h5>
-                  <div class="menu__desc-text">
-                     How can you successfully play the game without basic
-                     knowledge of controls? You can't! And we still need
-                     to win. There is some difference between playing
-                     through an app and playing in a browser window. The
-                     difference is in the controls. If you control the
-                     cell with the mouse in the browser, in the app, you
-                     do it with your fingers.
-                     <ul>
-                        <li>
-                           Don't split at the start of the game, or
-                           you'll just get eaten straight away.
-                        </li>
-                        <li>
-                           Please stay away from prominent opponents,
-                           or they will eat you up.
-                        </li>
-                        <li>
-                           Are you getting bigger? Don't get too
-                           excited. You are also getting slower.
-                        </li>
-                        <li>
-                           Have you met an opponent of your size? He
-                           will not be able to overcome you, and you
-                           will go through each other.
-                        </li>
-                     </ul>
-                  </div>
-                  <h5 class="menu__desc-title">
-                     <b>Use surroundings in Agario to win.</b>
-                  </h5>
-                  <div class="menu__desc-text">
-                     In Agario private server you need to adapt to your
-                     environment and trick bigger opponents with green
-                     objects called viruses. These dangerous objects
-                     cannot harm you if you are smaller than them. A much
-                     bigger opponent won't take any chances and get at
-                     you while you're around viruses. But avoid the
-                     viruses when you're big. Otherwise, they will tear
-                     you apart into small pieces, and other players will
-                     take advantage of it.
-                  </div>
-                  <h5 class="menu__desc-title">
-                     <b>Get all pieces together quickly!</b>
-                  </h5>
-                  <div class="menu__desc-text">
-                     Being a large cell, you will inevitably need to
-                     split it. Some advice on this:
-                     <ul>
-                        <li>
-                           You find it harder to eat your opponents
-                           because you are big and slow.
-                        </li>
-                        <li>Split into the enemy!</li>
-                        <li>
-                           Move cautiously in a state of separation.
-                           Opponents do not sleep.
-                        </li>
-                     </ul>
-                     Your two separated cells stand together and must
-                     come together to reunite.
-                  </div>
-                  <h5 class="menu__desc-title">
-                     <b>Remember: you are losing size.</b>
-                  </h5>
-                  <div class="menu__desc-text">
-                     You've probably guessed by now. Every second when
-                     you are playing agario game you lose in mass. Also,
-                     the bigger you are, the faster you lose. You should
-                     notice these changes in the score table. The problem
-                     is that the table only shows the peak of your
-                     rating. But the problem is solvable. That you have
-                     lost a lot in mass can be seen by how many points
-                     are added by eating other cells. Eat everyone, but
-                     be cautious about larger cells.The longer you don't
-                     eat anything, the faster you lose weight.
-                  </div>
-                  <h5 class="menu__desc-title"><b>Agario strategy</b></h5>
-                  <div class="menu__desc-text">
-                     Once we've given you some initial information on
-                     Agario controls and essential survival tips for the
-                     game, we move on to the most important thing of all:
-                     strategy. There are about 100 players in the regular
-                     game. So agree, it's not easy to survive.
-                  </div>
-                  <h5 class="menu__desc-title">
-                     <b>The very beginning: run and hide</b>
-                  </h5>
-                  <div class="menu__desc-text">
-                     Do not challenge yourself or other players at the
-                     start on the agario pvp server. First, you should
-                     swallow up points on the map. If your opponent has
-                     spotted you and started to chase you, try your best
-                     to run away. Never cram yourself into a corner of
-                     the map. Otherwise, players will kill you. Also,
-                     remember the advice with viruses! Collect points,
-                     watch out for prominent opponents. Split yourself!
-                     This is the way to win! When you have finally
-                     achieved a result in size, you're going to split
-                     yourself up and shoot the second part at your
-                     opponent, thereby quickly engulfing him. The
-                     opponent will eat your second part if you
-                     miscalculate your mass. You must not divide yourself
-                     too often. Everything is on track as long as no big
-                     adversaries are around. But as soon as they appear,
-                     all your small parts will be eaten in one go. You
-                     must be extremely careful if you are in one of the
-                     top five positions. Don't split more than twice, or
-                     you will be swallowed up.
-                  </div>
-                  <h5 class="menu__desc-title"><b>Corner them!</b></h5>
-                  <div class="menu__desc-text">
-                     If you have become the giant cell playing agario
-                     online, you have become the game's slowest cell. But
-                     that's okay. Try to corner your opponents. This will
-                     help you to eat them.
-                  </div>
-                  <h5 class="menu__desc-title">
-                     <b>The essence of the Agario game</b>
-                  </h5>
-                  <div class="menu__desc-text">
-                     The gameplay is simple and straightforward: dominate
-                     or be dominated by others. The problem with slowness
-                     when you're large could be a challenge, but we
-                     solved it above. I hope our tips are going to help
-                     you with the game! Win and become the biggest!
-                  </div>
-               </div>
-               <div class="ctrl-modal__footer">
-                  <button id="cm_confirm" class="btn btn-success">
-                  Got it!
-                  </button>
-               </div>
+          </div>
+          <div class="ctrl-modal__content">
+            <div class="menu__item">
+              <div id="settings" class="checkboxes">
+                <ul class="checkbox-grid">
+                  <li>
+                    <div class="pretty p-svg p-round p-smooth">
+                      <input type="checkbox" id="darkTheme" />
+                      <div class="state p-success">
+                        <svg class="svg svg-icon" viewBox="0 0 20 20">
+                          <path
+                            d="M7.629,14.566c0.125,0.125,0.291,0.188,0.456,0.188c0.164,0,0.329-0.062,0.456-0.188l8.219-8.221c0.252-0.252,0.252-0.659,0-0.911c-0.252-0.252-0.659-0.252-0.911,0l-7.764,7.763L4.152,9.267c-0.252-0.251-0.66-0.251-0.911,0c-0.252,0.252-0.252,0.66,0,0.911L7.629,14.566z"
+                            style="stroke: white; fill: white" />
+                        </svg>
+                        <label> Dark </label>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="pretty p-svg p-round p-smooth">
+                      <input type="checkbox" id="showMass" />
+                      <div class="state p-success">
+                        <svg class="svg svg-icon" viewBox="0 0 20 20">
+                          <path
+                            d="M7.629,14.566c0.125,0.125,0.291,0.188,0.456,0.188c0.164,0,0.329-0.062,0.456-0.188l8.219-8.221c0.252-0.252,0.252-0.659,0-0.911c-0.252-0.252-0.659-0.252-0.911,0l-7.764,7.763L4.152,9.267c-0.252-0.251-0.66-0.251-0.911,0c-0.252,0.252-0.252,0.66,0,0.911L7.629,14.566z"
+                            style="stroke: white; fill: white" />
+                        </svg>
+                        <label> Mass </label>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="pretty p-svg p-round p-smooth">
+                      <input type="checkbox" id="showChat" />
+                      <div class="state p-success">
+                        <svg class="svg svg-icon" viewBox="0 0 20 20">
+                          <path
+                            d="M7.629,14.566c0.125,0.125,0.291,0.188,0.456,0.188c0.164,0,0.329-0.062,0.456-0.188l8.219-8.221c0.252-0.252,0.252-0.659,0-0.911c-0.252-0.252-0.659-0.252-0.911,0l-7.764,7.763L4.152,9.267c-0.252-0.251-0.66-0.251-0.911,0c-0.252,0.252-0.252,0.66,0,0.911L7.629,14.566z"
+                            style="stroke: white; fill: white" />
+                        </svg>
+                        <label> Chat </label>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="pretty p-svg p-round p-smooth">
+                      <input type="checkbox" id="showMinimap" />
+                      <div class="state p-success">
+                        <svg class="svg svg-icon" viewBox="0 0 20 20">
+                          <path
+                            d="M7.629,14.566c0.125,0.125,0.291,0.188,0.456,0.188c0.164,0,0.329-0.062,0.456-0.188l8.219-8.221c0.252-0.252,0.252-0.659,0-0.911c-0.252-0.252-0.659-0.252-0.911,0l-7.764,7.763L4.152,9.267c-0.252-0.251-0.66-0.251-0.911,0c-0.252,0.252-0.252,0.66,0,0.911L7.629,14.566z"
+                            style="stroke: white; fill: white" />
+                        </svg>
+                        <label> Minimap </label>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="pretty p-svg p-round p-smooth">
+                      <input type="checkbox" id="showBorder" />
+                      <div class="state p-success">
+                        <svg class="svg svg-icon" viewBox="0 0 20 20">
+                          <path
+                            d="M7.629,14.566c0.125,0.125,0.291,0.188,0.456,0.188c0.164,0,0.329-0.062,0.456-0.188l8.219-8.221c0.252-0.252,0.252-0.659,0-0.911c-0.252-0.252-0.659-0.252-0.911,0l-7.764,7.763L4.152,9.267c-0.252-0.251-0.66-0.251-0.911,0c-0.252,0.252-0.252,0.66,0,0.911L7.629,14.566z"
+                            style="stroke: white; fill: white" />
+                        </svg>
+                        <label> Border </label>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="pretty p-svg p-round p-smooth">
+                      <input type="checkbox" id="showGrid" />
+                      <div class="state p-success">
+                        <svg class="svg svg-icon" viewBox="0 0 20 20">
+                          <path
+                            d="M7.629,14.566c0.125,0.125,0.291,0.188,0.456,0.188c0.164,0,0.329-0.062,0.456-0.188l8.219-8.221c0.252-0.252,0.252-0.659,0-0.911c-0.252-0.252-0.659-0.252-0.911,0l-7.764,7.763L4.152,9.267c-0.252-0.251-0.66-0.251-0.911,0c-0.252,0.252-0.252,0.66,0,0.911L7.629,14.566z"
+                            style="stroke: white; fill: white" />
+                        </svg>
+                        <label> Grid </label>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="pretty p-svg p-round p-smooth">
+                      <input type="checkbox" id="moreZoom" />
+                      <div class="state p-success">
+                        <svg class="svg svg-icon" viewBox="0 0 20 20">
+                          <path
+                            d="M7.629,14.566c0.125,0.125,0.291,0.188,0.456,0.188c0.164,0,0.329-0.062,0.456-0.188l8.219-8.221c0.252-0.252,0.252-0.659,0-0.911c-0.252-0.252-0.659-0.252-0.911,0l-7.764,7.763L4.152,9.267c-0.252-0.251-0.66-0.251-0.911,0c-0.252,0.252-0.252,0.66,0,0.911L7.629,14.566z"
+                            style="stroke: white; fill: white" />
+                        </svg>
+                        <label> Zoomout </label>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="pretty p-svg p-round p-smooth">
+                      <input type="checkbox" id="jellyPhysics" />
+                      <div class="state p-success">
+                        <svg class="svg svg-icon" viewBox="0 0 20 20">
+                          <path
+                            d="M7.629,14.566c0.125,0.125,0.291,0.188,0.456,0.188c0.164,0,0.329-0.062,0.456-0.188l8.219-8.221c0.252-0.252,0.252-0.659,0-0.911c-0.252-0.252-0.659-0.252-0.911,0l-7.764,7.763L4.152,9.267c-0.252-0.251-0.66-0.251-0.911,0c-0.252,0.252-0.252,0.66,0,0.911L7.629,14.566z"
+                            style="stroke: white; fill: white" />
+                        </svg>
+                        <label> Jelly Physics </label>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
             </div>
-         </div>
+          </div>
+        </div>
       </div>
-      <div id="cm_modal__settings" class="ctrl-modal ctrl-modal--hidden">
-         <div class="ctrl-modal__overlay">
-            <div class="ctrl-modal__modal">
-               <div class="ctrl-modal__header">
-                  <div class="ctrl-modal__title h3">
-                     Settings
-                  </div>
-                  <button id="cm_close__settings" class="ctrl-modal__close">
-                     <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M1.6001 14.4L14.4001 1.59998M14.4001 14.4L1.6001 1.59998" stroke="#333136" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                     </svg>
-                  </button>
-               </div>
-               <div class="ctrl-modal__content">
-                  <div class="menu__item">
-                     <div id="settings" class="checkboxes">
-                        <ul class="checkbox-grid">
-                           <li>
-                              <div class="pretty p-svg p-round p-smooth">
-                                 <input type="checkbox" id="darkTheme">
-                                 <div class="state p-success">
-                                    <svg class="svg svg-icon" viewBox="0 0 20 20">
-                                       <path d="M7.629,14.566c0.125,0.125,0.291,0.188,0.456,0.188c0.164,0,0.329-0.062,0.456-0.188l8.219-8.221c0.252-0.252,0.252-0.659,0-0.911c-0.252-0.252-0.659-0.252-0.911,0l-7.764,7.763L4.152,9.267c-0.252-0.251-0.66-0.251-0.911,0c-0.252,0.252-0.252,0.66,0,0.911L7.629,14.566z" style="
-                                          stroke: white;
-                                          fill: white;
-                                          "/>
-                                    </svg>
-                                    <label>
-                                    Dark
-                                    </label>
-                                 </div>
-                              </div>
-                           </li>
-                           <li>
-                              <div class="pretty p-svg p-round p-smooth">
-                                 <input type="checkbox" id="showMass">
-                                 <div class="state p-success">
-                                    <svg class="svg svg-icon" viewBox="0 0 20 20">
-                                       <path d="M7.629,14.566c0.125,0.125,0.291,0.188,0.456,0.188c0.164,0,0.329-0.062,0.456-0.188l8.219-8.221c0.252-0.252,0.252-0.659,0-0.911c-0.252-0.252-0.659-0.252-0.911,0l-7.764,7.763L4.152,9.267c-0.252-0.251-0.66-0.251-0.911,0c-0.252,0.252-0.252,0.66,0,0.911L7.629,14.566z" style="
-                                          stroke: white;
-                                          fill: white;
-                                          "/>
-                                    </svg>
-                                    <label>
-                                    Mass
-                                    </label>
-                                 </div>
-                              </div>
-                           </li>
-                           <li>
-                              <div class="pretty p-svg p-round p-smooth">
-                                 <input type="checkbox" id="showChat">
-                                 <div class="state p-success">
-                                    <svg class="svg svg-icon" viewBox="0 0 20 20">
-                                       <path d="M7.629,14.566c0.125,0.125,0.291,0.188,0.456,0.188c0.164,0,0.329-0.062,0.456-0.188l8.219-8.221c0.252-0.252,0.252-0.659,0-0.911c-0.252-0.252-0.659-0.252-0.911,0l-7.764,7.763L4.152,9.267c-0.252-0.251-0.66-0.251-0.911,0c-0.252,0.252-0.252,0.66,0,0.911L7.629,14.566z" style="
-                                          stroke: white;
-                                          fill: white;
-                                          "/>
-                                    </svg>
-                                    <label>
-                                    Chat
-                                    </label>
-                                 </div>
-                              </div>
-                           </li>
-                           <li>
-                              <div class="pretty p-svg p-round p-smooth">
-                                 <input type="checkbox" id="showMinimap">
-                                 <div class="state p-success">
-                                    <svg class="svg svg-icon" viewBox="0 0 20 20">
-                                       <path d="M7.629,14.566c0.125,0.125,0.291,0.188,0.456,0.188c0.164,0,0.329-0.062,0.456-0.188l8.219-8.221c0.252-0.252,0.252-0.659,0-0.911c-0.252-0.252-0.659-0.252-0.911,0l-7.764,7.763L4.152,9.267c-0.252-0.251-0.66-0.251-0.911,0c-0.252,0.252-0.252,0.66,0,0.911L7.629,14.566z" style="
-                                          stroke: white;
-                                          fill: white;
-                                          "/>
-                                    </svg>
-                                    <label>
-                                    Minimap
-                                    </label>
-                                 </div>
-                              </div>
-                           </li>
-                           <li>
-                              <div class="pretty p-svg p-round p-smooth">
-                                 <input type="checkbox" id="showBorder">
-                                 <div class="state p-success">
-                                    <svg class="svg svg-icon" viewBox="0 0 20 20">
-                                       <path d="M7.629,14.566c0.125,0.125,0.291,0.188,0.456,0.188c0.164,0,0.329-0.062,0.456-0.188l8.219-8.221c0.252-0.252,0.252-0.659,0-0.911c-0.252-0.252-0.659-0.252-0.911,0l-7.764,7.763L4.152,9.267c-0.252-0.251-0.66-0.251-0.911,0c-0.252,0.252-0.252,0.66,0,0.911L7.629,14.566z" style="
-                                          stroke: white;
-                                          fill: white;
-                                          "/>
-                                    </svg>
-                                    <label>
-                                    Border
-                                    </label>
-                                 </div>
-                              </div>
-                           </li>
-                           <li>
-                              <div class="pretty p-svg p-round p-smooth">
-                                 <input type="checkbox" id="showGrid">
-                                 <div class="state p-success">
-                                    <svg class="svg svg-icon" viewBox="0 0 20 20">
-                                       <path d="M7.629,14.566c0.125,0.125,0.291,0.188,0.456,0.188c0.164,0,0.329-0.062,0.456-0.188l8.219-8.221c0.252-0.252,0.252-0.659,0-0.911c-0.252-0.252-0.659-0.252-0.911,0l-7.764,7.763L4.152,9.267c-0.252-0.251-0.66-0.251-0.911,0c-0.252,0.252-0.252,0.66,0,0.911L7.629,14.566z" style="
-                                          stroke: white;
-                                          fill: white;
-                                          "/>
-                                    </svg>
-                                    <label>
-                                    Grid
-                                    </label>
-                                 </div>
-                              </div>
-                           </li>
-                           <li>
-                              <div class="pretty p-svg p-round p-smooth">
-                                 <input type="checkbox" id="moreZoom">
-                                 <div class="state p-success">
-                                    <svg class="svg svg-icon" viewBox="0 0 20 20">
-                                       <path d="M7.629,14.566c0.125,0.125,0.291,0.188,0.456,0.188c0.164,0,0.329-0.062,0.456-0.188l8.219-8.221c0.252-0.252,0.252-0.659,0-0.911c-0.252-0.252-0.659-0.252-0.911,0l-7.764,7.763L4.152,9.267c-0.252-0.251-0.66-0.251-0.911,0c-0.252,0.252-0.252,0.66,0,0.911L7.629,14.566z" style="
-                                          stroke: white;
-                                          fill: white;
-                                          "/>
-                                    </svg>
-                                    <label>
-                                    Zoomout
-                                    </label>
-                                 </div>
-                              </div>
-                           </li>
-                           <li>
-                              <div class="pretty p-svg p-round p-smooth">
-                                 <input type="checkbox" id="jellyPhysics">
-                                 <div class="state p-success">
-                                    <svg class="svg svg-icon" viewBox="0 0 20 20">
-                                       <path d="M7.629,14.566c0.125,0.125,0.291,0.188,0.456,0.188c0.164,0,0.329-0.062,0.456-0.188l8.219-8.221c0.252-0.252,0.252-0.659,0-0.911c-0.252-0.252-0.659-0.252-0.911,0l-7.764,7.763L4.152,9.267c-0.252-0.251-0.66-0.251-0.911,0c-0.252,0.252-0.252,0.66,0,0.911L7.629,14.566z" style="
-                                          stroke: white;
-                                          fill: white;
-                                          "/>
-                                    </svg>
-                                    <label>
-                                    Jelly Physics
-                                    </label>
-                                 </div>
-                              </div>
-                           </li>
-                        </ul>
-                     </div>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </div>
-      <style>
-         .ctrl-modal__overlay {
-         display: flex;
-         justify-content: center;
-         align-items: flex-start;
-         width: 100%;
-         height: 100vh;
-         position: fixed;
-         top: 0;
-         left: 0;
-         background-color: rgba(0, 0, 0, 0.5);
-         overflow: auto;
-         z-index: 501;
-         }
-         .ctrl-modal__modal {
-         display: block;
-         width: 330px;
-         background-color: white;
-         border-radius: 15px;
-         padding: 20px;
-         margin: 20vh 0 35vh;
-         }
-         #cm_modal__rules .ctrl-modal__modal {
-         width: 500px;
-         padding: 15px;
-         }
-         #cm_modal__settings .ctrl-modal__modal {
-         padding: 20px 20px 40px 20px;
-         margin: 30vh 0 35vh;
-         }
-         #cm_modal__clans .ctrl-modal__modal {
-         width: 390px;
-         padding: 20px 20px 32px 20px;
-         }
-         .ctrl-modal__header {
-         display: flex;
-         }
-         .ctrl-modal__title {
-         flex: 1;
-         margin: 10px 0;
-         text-align: center;
-         }
-         button.ctrl-modal__close {
-         display: flex;
-         align-items: center;
-         justify-content: center;
-         background: none;
-         border: none;
-         padding: 0;
-         margin: 0;
-         }
-         .ctrl-modal__footer {
-         text-align: center;
-         padding-top: 10px;
-         }
-         .ctrl-modal--hidden {
-         display: none;
-         }
-         .body--noscroll {
-         overflow: hidden;
-         }
-         @media (max-width: 551px) {
-         .ctrl-modal__modal {
-         width: 100%;
-         margin: 20vh 20px 35vh;
-         }
-         }
-         .link_btn {
-         color: #337ab7;
-         background: none;
-         border: none;
-         padding: 0;
-         margin: 0;
-         }
-      </style>
-      <script>
-         function _cm_open() {
-           document.body.classList.add("body--noscroll");
-           cm_modal__rules.classList.remove("ctrl-modal--hidden");
-         }
-         function _cm_close() {
-           document.body.classList.remove("body--noscroll");
-           cm_modal__rules.classList.add("ctrl-modal--hidden");
-         }
-         cm_confirm.addEventListener("click", _cm_close);
-         cm_close.addEventListener("click", _cm_close);
-      </script>
-      <script>
-         function _cm_settings_open() {
-           document.body.classList.add("body--noscroll");
-           cm_modal__settings.classList.remove("ctrl-modal--hidden");
-         }
-         function _cm_settings_close() {
-           document.body.classList.remove("body--noscroll");
-           cm_modal__settings.classList.add("ctrl-modal--hidden");
-         }
-         cm_close__settings.addEventListener("click", _cm_settings_close);
-      </script>
-      <script async src="js/gpt.js"></script>
-      <script>
-         window.googletag = window.googletag || { cmd: [] };
-         var adSlot1, adSlot2, adSlot3, adSlot4, adSlot5, adSlot6;
-         
-         googletag.cmd.push(function () {
-           // Define ad slot 1.
-           adSlot1 = googletag
-             .defineSlot(
-               "/21727042/sigmally-main-1",
-               [300, 250],
-               "div-gpt-ad-1622632389350-0"
-             )
-             .addService(googletag.pubads());
-           // Define and configure ad slot 2.
-           adSlot2 = googletag
-             .defineSlot(
-               "/21727042/sigmally-main-3",
-               [300, 250],
-               "div-gpt-ad-1622841396282-0"
-             )
-             .addService(googletag.pubads());
-           adSlot3 = googletag
-             .defineSlot(
-               "/21727042/sigmally-main-4",
-               [728, 90],
-               "div-gpt-ad-1622841482467-0"
-             )
-             .addService(googletag.pubads());
-           adSlot4 = googletag
-             .defineSlot(
-               "/21727042/sigmally-final-1",
-               [300, 250],
-               "div-gpt-ad-1622635433462-0"
-             )
-             .addService(googletag.pubads());
-           adSlot5 = googletag
-             .defineSlot(
-               "/21727042/sigmally-final-2",
-               [160, 600],
-               "div-gpt-ad-1622636498971-0"
-             )
-             .addService(googletag.pubads());
-           // Define and configure ad slot 2.
-           adSlot6 = googletag
-             .defineSlot(
-               "/21727042/sigmally-final-3",
-               [160, 600],
-               "div-gpt-ad-1622636569591-0"
-             )
-             .addService(googletag.pubads());
-         
-           // Enable SRA and services.
-           googletag.pubads().enableSingleRequest();
-         
-           //googletag.pubads().enableLazyLoad({
-           //fetchMarginPercent: 500,  // Fetch slots within 5 viewports.
-           //renderMarginPercent: 200,  // Render slots within 2 viewports.
-           //mobileScaling: 2.0  // Double the above values on mobile.
-           //});
-         
-           googletag.enableServices();
-         });
-      </script>
-      <script data-ad-client="ca-pub-3430997378768549" async src="js/adsbygoogle.js"></script>
-      <script>
-         (function () {
-           setTimeout(() => {
-             googletag.cmd.push(function () {
-               googletag.display(adSlot1);
-             });
-           });
-         
-           setTimeout(() => {
-             googletag.cmd.push(function () {
-               googletag.display(adSlot2);
-             });
-           });
-         
-           setTimeout(() => {
-             googletag.cmd.push(function () {
-               googletag.display(adSlot3);
-             });
-           });
-         })();
-      </script>
-      <link href="css/all.css" rel="stylesheet">
-   </body>
+    </div>
+    <style>
+      .ctrl-modal__overlay {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        width: 100%;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        left: 0;
+        background-color: rgba(0, 0, 0, 0.5);
+        overflow: auto;
+        z-index: 501;
+      }
+      .ctrl-modal__modal {
+        display: block;
+        width: 330px;
+        background-color: white;
+        border-radius: 15px;
+        padding: 20px;
+        margin: 20vh 0 35vh;
+      }
+      #cm_modal__rules .ctrl-modal__modal {
+        width: 500px;
+        padding: 15px;
+      }
+      #cm_modal__settings .ctrl-modal__modal {
+        padding: 20px 20px 40px 20px;
+        margin: 30vh 0 35vh;
+      }
+      #cm_modal__clans .ctrl-modal__modal {
+        width: 390px;
+        padding: 20px 20px 32px 20px;
+      }
+      .ctrl-modal__header {
+        display: flex;
+      }
+      .ctrl-modal__title {
+        flex: 1;
+        margin: 10px 0;
+        text-align: center;
+      }
+      button.ctrl-modal__close {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: none;
+        border: none;
+        padding: 0;
+        margin: 0;
+      }
+      .ctrl-modal__footer {
+        text-align: center;
+        padding-top: 10px;
+      }
+      .ctrl-modal--hidden {
+        display: none;
+      }
+      .body--noscroll {
+        overflow: hidden;
+      }
+      @media (max-width: 551px) {
+        .ctrl-modal__modal {
+          width: 100%;
+          margin: 20vh 20px 35vh;
+        }
+      }
+      .link_btn {
+        color: #337ab7;
+        background: none;
+        border: none;
+        padding: 0;
+        margin: 0;
+      }
+    </style>
+    <script>
+      function _cm_open() {
+        document.body.classList.add("body--noscroll");
+        cm_modal__rules.classList.remove("ctrl-modal--hidden");
+      }
+      function _cm_close() {
+        document.body.classList.remove("body--noscroll");
+        cm_modal__rules.classList.add("ctrl-modal--hidden");
+      }
+      cm_confirm.addEventListener("click", _cm_close);
+      cm_close.addEventListener("click", _cm_close);
+    </script>
+    <script>
+      function _cm_settings_open() {
+        document.body.classList.add("body--noscroll");
+        cm_modal__settings.classList.remove("ctrl-modal--hidden");
+      }
+      function _cm_settings_close() {
+        document.body.classList.remove("body--noscroll");
+        cm_modal__settings.classList.add("ctrl-modal--hidden");
+      }
+      cm_close__settings.addEventListener("click", _cm_settings_close);
+    </script>
+    <script async src="js/gpt.js"></script>
+    <script>
+      window.googletag = window.googletag || { cmd: [] };
+      var adSlot1, adSlot2, adSlot3, adSlot4, adSlot5, adSlot6;
+
+      googletag.cmd.push(function () {
+        // Define ad slot 1.
+        adSlot1 = googletag
+          .defineSlot("/21727042/sigmally-main-1", [300, 250], "div-gpt-ad-1622632389350-0")
+          .addService(googletag.pubads());
+        // Define and configure ad slot 2.
+        adSlot2 = googletag
+          .defineSlot("/21727042/sigmally-main-3", [300, 250], "div-gpt-ad-1622841396282-0")
+          .addService(googletag.pubads());
+        adSlot3 = googletag
+          .defineSlot("/21727042/sigmally-main-4", [728, 90], "div-gpt-ad-1622841482467-0")
+          .addService(googletag.pubads());
+        adSlot4 = googletag
+          .defineSlot("/21727042/sigmally-final-1", [300, 250], "div-gpt-ad-1622635433462-0")
+          .addService(googletag.pubads());
+        adSlot5 = googletag
+          .defineSlot("/21727042/sigmally-final-2", [160, 600], "div-gpt-ad-1622636498971-0")
+          .addService(googletag.pubads());
+        // Define and configure ad slot 2.
+        adSlot6 = googletag
+          .defineSlot("/21727042/sigmally-final-3", [160, 600], "div-gpt-ad-1622636569591-0")
+          .addService(googletag.pubads());
+
+        // Enable SRA and services.
+        googletag.pubads().enableSingleRequest();
+
+        //googletag.pubads().enableLazyLoad({
+        //fetchMarginPercent: 500,  // Fetch slots within 5 viewports.
+        //renderMarginPercent: 200,  // Render slots within 2 viewports.
+        //mobileScaling: 2.0  // Double the above values on mobile.
+        //});
+
+        googletag.enableServices();
+      });
+    </script>
+    <script data-ad-client="ca-pub-3430997378768549" async src="js/adsbygoogle.js"></script>
+    <script>
+      (function () {
+        setTimeout(() => {
+          googletag.cmd.push(function () {
+            googletag.display(adSlot1);
+          });
+        });
+
+        setTimeout(() => {
+          googletag.cmd.push(function () {
+            googletag.display(adSlot2);
+          });
+        });
+
+        setTimeout(() => {
+          googletag.cmd.push(function () {
+            googletag.display(adSlot3);
+          });
+        });
+      })();
+    </script>
+    <link href="css/all.css" rel="stylesheet" />
+  </body>
 </html>
